@@ -2,7 +2,9 @@ package com.lyc88.services.imp;
 
 import com.lyc88.beans.Subject;
 import com.lyc88.dao.SubjectDao;
+import com.lyc88.dao.TreeBeanDao;
 import com.lyc88.services.SubjectService;
+import com.lyc88.utils.TreeBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
@@ -18,6 +20,8 @@ import java.util.List;
 public class SubjectServiceImp implements SubjectService {
     @Resource
     private SubjectDao subjectDao;
+    @Resource
+    private TreeBeanDao treeBeanDao;
     public void save(Subject subject) {
 
     }
@@ -44,5 +48,14 @@ public class SubjectServiceImp implements SubjectService {
         System.out.println(subjectDao.get(22248).getTreeDesc());
         //System.out.println(applicationContext.getBean("dataSource"));
 
+    }
+
+    public List<Subject> getFirstNodes() {
+
+        return subjectDao.getFirstNodes();
+    }
+
+    public List<TreeBean> getTree(Integer pId) {
+        return treeBeanDao.getList(pId);
     }
 }

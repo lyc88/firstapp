@@ -1,5 +1,7 @@
 package com.lyc88.base;
 
+import com.lyc88.utils.Page;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -16,4 +18,8 @@ public interface BaseInterface<T> {
     public List<T> getAll();
 
     public T get(Serializable uuid);
+
+    public List<T> getPage(Page page);
+
+    public long getTotal();
 }

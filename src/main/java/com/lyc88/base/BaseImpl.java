@@ -1,5 +1,7 @@
 package com.lyc88.base;
 
+import com.lyc88.utils.Page;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.DetachedCriteria;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
@@ -29,6 +31,9 @@ public abstract class BaseImpl<T> implements BaseInterface<T>{
         entityClass =  (Class)params[0];
     }
 
+    public Session getSession(){
+        return  this.sf.getCurrentSession();
+    }
     public void save(T t) {
         this.sf.getCurrentSession().save(t);
     }
@@ -47,5 +52,18 @@ public abstract class BaseImpl<T> implements BaseInterface<T>{
 
     public List<T> getAll() {
         return (List<T>) this.sf.getCurrentSession().createCriteria(entityClass).list();
+    }
+
+    public List<T> getPage(Page page) {
+        List list = getSession().createCriteria(entityClass)
+                .setFirstResult((page.getCurrentPage()-1)*page.getPageSize())
+                .setMaxResults(page.getPageSize()).list();
+        return list;
+    }
+
+    public long getTotal() {
+        String className = entityClass.getName();
+
+        return (Long) getSession().createQuery("select count(*) from "+className.substring(className.lastIndexOf(".")+1)).uniqueResult();
     }
 }

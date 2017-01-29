@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="firstapp:war exploded">
+  <artifact type="exploded-war" build-on-make="true" name="firstapp:war exploded">
     <output-path>$PROJECT_DIR$/target/firstapp</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
@@ -54,6 +54,14 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.1.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.1.0.RELEASE" />
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Maven: org.apache.solr:solr-solrj:5.2.0" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.4.1" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.4.1" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpmime:4.4.1" />
+          <element id="library" level="project" name="Maven: org.apache.zookeeper:zookeeper:3.4.6" />
+          <element id="library" level="project" name="Maven: org.codehaus.woodstox:stax2-api:3.1.4" />
+          <element id="library" level="project" name="Maven: org.codehaus.woodstox:woodstox-core-asl:4.4.1" />
+          <element id="library" level="project" name="Maven: org.noggit:noggit:0.6" />
         </element>
       </element>
       <element id="directory" name="META-INF">

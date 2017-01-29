@@ -3,6 +3,12 @@ package com.lyc88.dao.imp;
 import com.lyc88.base.BaseImpl;
 import com.lyc88.beans.Subject;
 import com.lyc88.dao.SubjectDao;
+import com.lyc88.utils.Page;
+import com.lyc88.utils.TreeBean;
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Expression;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -20,6 +26,13 @@ import java.util.List;
  */
 @Repository("subjectDao")
 class SubjectDaoImp extends BaseImpl<Subject> implements SubjectDao {
+    public List<Subject> getFirstNodes(){
+        Criteria criteria = this.getSession().createCriteria(Subject.class);
+        // Expression.eq("patentId",-1) 过时了
+        Criterion criterion1 = Restrictions.eq("patentId",-1);
+        return criteria.add(criterion1).list();
+
+    }
 
     public static void main(String[] args) {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
@@ -37,8 +50,12 @@ class SubjectDaoImp extends BaseImpl<Subject> implements SubjectDao {
         System.out.println(applicationContext.getBean("dataSource"));
 
         SubjectDao subjectDao1 = (SubjectDao) applicationContext.getBean("subjectDao");
-        System.out.println(subjectDao1.get(22248).getTreeDesc()+"sjdfbdfsl");
+        System.out.println(subjectDao1.getFirstNodes().size());
         System.out.println("asdsd");
+
     }
 
+    public List<Subject> getPage(Page page) {
+        return null;
+    }
 }
