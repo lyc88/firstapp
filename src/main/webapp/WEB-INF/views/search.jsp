@@ -75,12 +75,12 @@
         next: '<li class="next"><a href="javascript:;">下一页</a></li>',
         page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
         onPageChange: function (num, type) {
-
+            var q = $("#q").val();
             $("#loading").removeClass().addClass("displayLoading");
             $.ajax({
                 type: "POST",
                 url: "${pageContext.request.contextPath }/search/searchAll/"+num,
-                //data :{"currentPage":num},
+                data :{"q":q},
                 dataType:"json",
                 success: function(data){
                     var html = template('content',{"list" : data.queryResponseBeans});

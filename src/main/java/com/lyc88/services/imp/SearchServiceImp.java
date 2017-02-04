@@ -39,8 +39,9 @@ public class SearchServiceImp implements SearchService {
         long start = System.currentTimeMillis();
         Page page = new Page(total,5000);
         addIndex(httpSolrClient,1,page.getTotalPage(),page);
+        //addIndex(httpSolrClient,1,1,page);
         long end = System.currentTimeMillis();
-        System.out.println((end-start)/5000);
+        System.out.println((end-start)/1000);
 
     }
 
