@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>到馆读者人数详情</title>
+    <link type="text/css" rel="stylesheet" href="css/all.min.css" />
+</head>
+<body>
+<div class="header">
+    <div class="center-box">
+        <span class="logo"></span>
+        <span class="name_image"></span>
+        <div class="useranddata">
+            <div class="log">
+                <button class="login">
+                    登录
+                </button>
+                <button>
+                    注册
+                </button>
+            </div>
+            <div class="data">
+                <span></span>
+                <p>星期四&nbsp&nbsp2016-11-28</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="tool_bar" id="center-box">
+    <div class="center-box" >
+        <div class="bigdata">
+            <p>信息资源及利用大数据</p>
+            <span></span>
+        </div>
+        <div class="reader_module_button">
+            <a class="reader_reproter">
+                <span></span>
+                读者分析报告
+            </a>
+            <a class="resource_reporter">
+                <span></span>
+                资源分析报告
+            </a>
+            <a class="use_reporter">
+                <span></span>
+                利用分析报告
+            </a>
+        </div>
+    </div>
+</div>
+<div class="back_button">
+    <div class="center-box">
+        <button></button>
+    </div>
+</div>
+<div class="lib_reader">
+    <div class="center-box">
+        <p class="lib_reader_title">历史读者办证统计</p>
+        <div class="lib_reader_content">
+            <div class="statistics_classify">
+                <select class="year_mouth_day form-control" >
+                    <option value="year">按年</option>
+                    <option value="mouth">按月</option>
+                    <option value="day">按日</option>
+                </select>
+                <!--这是个套路,通过hide show的切换来实现'年/月/日select'的功能-->
+                <div class="time_line_year">
+                    <div class="input-append date begging_time">
+                        <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                        <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                    </div>
+                    <span>   -   </span>
+                    <div  class="input-append date ending_time">
+                        <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                        <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                    </div>
+                </div>
+                <div class="time_line_mouth">
+                    <div class="input-append date begging_time">
+                        <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                        <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                    </div>
+                    <span>   -   </span>
+                    <div  class="input-append date ending_time">
+                        <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                        <span class="add-on"style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                    </div>
+                </div>
+                <div class="time_line_day">
+                    <div class="input-append date begging_time">
+                        <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                        <span class="add-on"style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                    </div>
+                    <span>   -   </span>
+                    <div  class="input-append date ending_time">
+                        <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                        <span class="add-on"style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                    </div>
+                </div>
+                <button class="statistics">统计</button>
+            </div>
+            <table class="table-bordered lib_reader_year_list">
+                <tr>
+                    <th></th>
+                    <th>2007年</th>
+                    <th>2008年</th>
+                    <th>2009年</th>
+                    <th>2010年</th>
+                    <th>2011年</th>
+                    <th>2012年</th>
+                    <th>2013年</th>
+                    <th>2014年</th>
+                    <th>2015年</th>
+                    <th>2016年</th>
+                </tr>
+                <tr>
+                    <td>到馆读者人数</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">121231231312313123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123345</td>
+                </tr>
+            </table>
+            <div id="lib_reader_chart"></div>
+            <img src="/static/image/loading.gif" alt="" id="uuid">
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="center-box">
+        <p class="contact_info">
+            南昌陆军学院图书馆 版权所有   咨询电话：0621-71174（军队）、0791-6871174（地线）   电子邮件：tsg@ncl.mtn   管理入口<br/>
+            技术支持：武汉麦达metadata.net.cn
+        </p>
+        <p class="user_info">
+            当前在线：    123人<br/>
+            今日访问：     23人<br/>
+            历史访问：  12321人
+        </p>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="js/lib_reader_detail.js"></script>
+<script type="text/javascript" src="js/lib_reader_detail_charts_publish.js"></script>
+<script type="text/javascript">
+    window.onload = function(){
+        var canvas = $("#lib_reader_chart").find("canvas")[0];
+        //alert(canvas);
+        var image = new Image();
+        image.src = $("#lib_reader_chart").find("canvas")[0].toDataURL("image/png");
+
+        $("#uuid").attr("src",$("#lib_reader_chart").find("canvas")[0].toDataURL("image/png"));
+
+    };
+$(function(){
+   /* var canvas = $("#lib_reader_chart").find("canvas")[0];
+    //alert(canvas);
+    var image = new Image();
+    image.src = $("#lib_reader_chart").find("canvas")[0].toDataURL("image/png");
+
+    $("#uuid").attr("src",$("#lib_reader_chart").find("canvas")[0].toDataURL("image/png"));
+*/
+    console.log(image.src);
+    //debugger;
+
+    /*var _fixType = function(type) {
+        type = type.toLowerCase().replace(/jpg/i, 'jpeg');
+        var r = type.match(/png|jpeg|bmp|gif/)[0];
+        return 'image/' + r;
+    };
+*/
+// 加工image data，替换mime type
+    /*image = image.replace(_fixType(image.src),'image/octet-stream');
+
+    var saveFile = function(data, filename){
+        var save_link = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
+        save_link.href = data;
+        save_link.download = filename;
+
+        var event = document.createEvent('MouseEvents');
+        event.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        save_link.dispatchEvent(event);
+    };
+*/
+// 下载后的问题名
+    //var filename = 'baidufe_' + (new Date()).getTime() + '.' + type;
+// download
+   // saveFile(image,filename);
+});
+
+</script>
+</html>

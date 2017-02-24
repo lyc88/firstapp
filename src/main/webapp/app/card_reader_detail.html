@@ -1,0 +1,2039 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>持证读者人数详情</title>
+    <link type="text/css" rel="stylesheet" href="css/all.min.css" />
+
+    <style type="text/css">
+        .group_block_title .up_down{
+                float: right;
+                border: none;
+                width: 82px;
+                height: 40px;
+                background-color: #c9c7c7;
+                font-family: Microsoft YaHei;
+                font-size: 18px;
+                line-height: 36px;
+                letter-spacing: 1.8px;
+                margin: 4px 6px 0 0;
+                color: #fff;
+        }
+
+        .group_block_title .classify_up{
+                 background-image: url(./css/sprite.png);
+                 display: inline-block;
+                 width: 16px;
+                 height: 16px;
+                 margin-left: 4px;
+                 margin-top: 11px;
+                 background-position: -217px -104px;
+        }
+        .group_block_title .classify_1{
+           background-position: -281px -104px !important;
+        }
+        .group_block2{
+                border: solid 1px #e3e1e1;
+                overflow: hidden;
+                width: 968px;
+                margin-bottom: 10px;
+        }
+       .group_block2 .group_block_title{
+                text-indent: 17px;
+                line-height: 49px;
+                width: 966px;
+                height: 49px;
+                background-color: #e3e1e1;
+                font-family: Microsoft YaHei;
+                font-size: 20px;
+                letter-spacing: 2px;
+                color: #1c1c1c;
+                margin-bottom: 0;
+        }
+        .group_block2 .group_block_subtitle{
+                text-indent: 17px;
+                line-height: 49px;
+                width: 966px;
+                height: 49px;
+                background-color: #e3e1e1;
+                font-family: Microsoft YaHei;
+                font-size: 20px;
+                letter-spacing: 2px;
+                color: #1c1c1c;
+                margin-bottom: 0;
+                margin-top: -9px;
+        }
+        .group_block2 .group_block_subtitle span{
+                display: block!important;
+                float: left;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                max-width: 250px;
+                margin-right: 60px;
+        }
+       .group_block2 .group_block_table{
+                height: 334px!important;
+                overflow-x: hidden;
+                overflow-y: scroll;
+        }
+        .group_block_table table {
+              width: 100%;
+                  }
+         .group_block_table table tbody {
+             width: 968px;
+          }
+            .group_block2 .group_block_table table th {
+                text-overflow: ellipsis;
+                overflow: hidden;
+                width: 33.3%;
+                white-space: nowrap;
+                text-align: center;
+                font-family: Microsoft YaHei;
+                font-size: 18px;
+                letter-spacing: 1.8px;
+                color: #1c1c1c;
+             }
+             .group_block2 .group_block_table table tr td{
+                   text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    height: 36px;
+                    text-align: center;
+                    font-family: Microsoft YaHei;
+                    font-size: 18px;
+                    letter-spacing: 1.8px;
+                    color: #1c1c1c;
+             }
+         .cart_out{
+            display: none;
+         }
+         .up_down>i{
+            font-style:normal;
+         }
+     </style>
+</head>
+<body>
+<div class="header">
+    <div class="center-box">
+        <span class="logo"></span>
+        <span class="name_image"></span>
+        <div class="useranddata">
+            <div class="log">
+                <button class="login">
+                    登录
+                </button>
+                <button>
+                    注册
+                </button>
+            </div>
+            <div class="data">
+                <span></span>
+                <p>星期四&nbsp&nbsp2016-11-28</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="tool_bar">
+    <div class="center-box">
+        <div class="bigdata">
+            <p>信息资源及利用大数据</p>
+            <span></span>
+        </div>
+        <div class="reader_module_button">
+            <a class="reader_reproter">
+                <span></span>
+                读者分析报告
+            </a>
+            <a class="resource_reporter">
+                <span></span>
+                资源分析报告
+            </a>
+            <a class="use_reporter">
+                <span></span>
+                利用分析报告
+            </a>
+        </div>
+    </div>
+</div>
+<div class="back_button">
+    <div class="center-box">
+        <button></button>
+    </div>
+</div>
+<div class="history_card_reader">
+    <div class="center-box">
+        <p class="history_card_reader_title">历史读者办证统计</p>
+        <div class="history_card_reader_content">
+            <div class="statistics_classify">
+                <select class="reader_classify form-control" >
+                    <option>读者类型</option>
+                    <option>读者单位</option>
+
+                </select>
+                <select class="year_mouth form-control" >
+                    <option value="year">按年</option>
+                    <option value="mouth">按月</option>
+                </select>
+                <!--这是个套路,通过hide show的切换来实现'年/月select'的功能-->
+                <div class="time_line_year">
+                    <div class="input-append date begging_time">
+                        <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                        <span class="add-on"style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                    </div>
+                    <span>   -   </span>
+                    <div  class="input-append date ending_time">
+                        <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                        <span class="add-on"style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                    </div>
+                </div>
+                <div class="time_line_mouth">
+                    <div class="input-append date begging_time">
+                        <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                        <span class="add-on"style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                    </div>
+                    <span>   -   </span>
+                    <div  class="input-append date ending_time">
+                        <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                        <span class="add-on"style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                    </div>
+                </div>
+                <button class="statistics">统计</button>
+            </div>
+            <table class="table-bordered history_card_reader_mouth_list">
+                <tr>
+                    <th rowspan="2">读者类型</th>
+                    <th colspan="6">2007年</th>
+                    <th colspan="5">2008年</th>
+                    <th rowspan="2">小计</th>
+                </tr>
+                <tr>
+                    <td class="mouth_col">七月</td>
+                    <td class="mouth_col">八月</td>
+                    <td class="mouth_col">九月</td>
+                    <td class="mouth_col">十月</td>
+                    <td class="mouth_col">十一月</td>
+                    <td class="mouth_col">十二月</td>
+                    <td class="mouth_col">一月</td>
+                    <td class="mouth_col">二月</td>
+                    <td class="mouth_col">三月</td>
+                    <td class="mouth_col">四月</td>
+                    <td class="mouth_col">五月</td>
+                </tr>
+                <tr>
+                    <td>读者类型一</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">112312312312331312312323</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">1223232323</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">12345</td>
+
+                </tr>
+                <tr>
+                    <td>读者类型一</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">1223232323</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">12345</td>
+
+                </tr>
+                <tr>
+                    <td>读者类型一</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">1223232323</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">12345</td>
+
+                </tr>
+                <tr>
+                    <td>读者类型一</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">1223232323</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">12345</td>
+
+                </tr>
+                <tr>
+                    <td>读者类型一</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">1223232323</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">12345</td>
+
+                </tr>
+                <tr>
+                    <td>读者类型一</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">1223232323</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">123</td>
+                    <td class="mouth_count">12345</td>
+
+                </tr>
+            </table>
+            <table class="table-bordered history_card_reader_year_list">
+                <tr>
+                    <th>读者类型</th>
+                    <th>2008年</th>
+                    <th>2009年</th>
+                    <th>2010年</th>
+                    <th>2011年</th>
+                    <th>2012年</th>
+                    <th>2013年</th>
+                    <th>2014年</th>
+                    <th>2015年</th>
+                    <th>2016年</th>
+                    <th>小计</th>
+                </tr>
+                <tr>
+                    <td>读者类型一</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123345</td>
+                </tr>
+                <tr>
+                    <td>读者类型一</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123345</td>
+                </tr>
+                <tr>
+                    <td>读者类型一</td>
+                    <td class="year_count">121231231233</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123345</td>
+                </tr>
+                <tr>
+                    <td>读者类型一</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123345</td>
+                </tr>
+                <tr>
+                    <td>读者类型一</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123345</td>
+                </tr>
+                <tr>
+                    <td>读者类型一</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123345</td>
+                </tr>
+                <tr>
+                    <td>读者类型一</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123</td>
+                    <td class="year_count">123345</td>
+                </tr>
+
+            </table>
+            <div id="history_card_reader_chart"></div>
+            <img src="" alt="" id="uuid">
+        </div>
+    </div>
+</div>
+<div class="today_card_reader">
+    <div class="center-box">
+        <p class="today_card_reader_title">现有持证读者办证统计</p>
+        <div class="today_card_reader_content">
+            <div class="group_block2">
+                <p class="group_block_title">
+                    单位一
+                     <button class="up_down">
+                    <span class="classify_up"></span>
+                    <i>展开</i>
+                </button>
+                 <div class="cart_out">
+                </p>
+                <p class="group_block_subtitle">
+                    <span>类型一&nbsp124124124345人</span>
+                    <span>类型二&nbsp12312214445人</span>
+                    <span>总计读者&nbsp12345人</span>
+                </p>
+                <div class="group_block_table">
+                    <table class="table-bordered">
+                        <tr>
+                            <th>姓名</th>
+                            <th>借书证号</th>
+                            <th>读书类型</th>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">002201123123123231231312340451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+
+                    </table>
+                </div>
+                </div>
+            </div>
+             <div class="group_block2">
+                <p class="group_block_title">
+                    单位二
+                     <button class="up_down">
+                    <span class="classify_up"></span>
+                    <i>展开</i>
+                </button>
+                 <div class="cart_out">
+                </p>
+                <p class="group_block_subtitle">
+                    <span>类型一&nbsp124124124345人</span>
+                    <span>类型二&nbsp12312214445人</span>
+                    <span>总计读者&nbsp12345人</span>
+                </p>
+                <div class="group_block_table">
+                    <table class="table-bordered">
+                        <tr>
+                            <th>姓名</th>
+                            <th>借书证号</th>
+                            <th>读书类型</th>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">002201123123123231231312340451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+
+                    </table>
+                </div>
+                </div>
+            </div>
+            <div class="group_block2">
+                <p class="group_block_title">
+                    单位三
+                     <button class="up_down">
+                    <span class="classify_up"></span>
+                    <i>展开</i>
+                </button>
+                 <div class="cart_out">
+                </p>
+                <p class="group_block_subtitle">
+                    <span>类型一&nbsp124124124345人</span>
+                    <span>类型二&nbsp12312214445人</span>
+                    <span>总计读者&nbsp12345人</span>
+                </p>
+                <div class="group_block_table">
+                    <table class="table-bordered">
+                        <tr>
+                            <th>姓名</th>
+                            <th>借书证号</th>
+                            <th>读书类型</th>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">002201123123123231231312340451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+
+                    </table>
+                </div>
+                </div>
+            </div>
+             <div class="group_block2">
+                <p class="group_block_title">
+                    单位三
+                     <button class="up_down">
+                    <span class="classify_up"></span>
+                    <i>展开</i>
+                </button>
+                 <div class="cart_out">
+                </p>
+                <p class="group_block_subtitle">
+                    <span>类型一&nbsp124124124345人</span>
+                    <span>类型二&nbsp12312214445人</span>
+                    <span>总计读者&nbsp12345人</span>
+                </p>
+                <div class="group_block_table">
+                    <table class="table-bordered">
+                        <tr>
+                            <th>姓名</th>
+                            <th>借书证号</th>
+                            <th>读书类型</th>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">002201123123123231231312340451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+
+                    </table>
+                </div>
+                </div>
+            </div>
+             <div class="group_block2">
+                <p class="group_block_title">
+                    单位五
+                     <button class="up_down">
+                    <span class="classify_up"></span>
+                    <i>展开</i>
+                </button>
+                 <div class="cart_out">
+                </p>
+                <p class="group_block_subtitle">
+                    <span>类型一&nbsp124124124345人</span>
+                    <span>类型二&nbsp12312214445人</span>
+                    <span>总计读者&nbsp12345人</span>
+                </p>
+                <div class="group_block_table">
+                    <table class="table-bordered">
+                        <tr>
+                            <th>姓名</th>
+                            <th>借书证号</th>
+                            <th>读书类型</th>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">002201123123123231231312340451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+
+                    </table>
+                </div>
+                </div>
+            </div>
+             <div class="group_block2">
+                <p class="group_block_title">
+                    单位六
+                     <button class="up_down">
+                    <span class="classify_up"></span>
+                   <i>展开</i>
+                </button>
+                 <div class="cart_out">
+                </p>
+                <p class="group_block_subtitle">
+                    <span>类型一&nbsp124124124345人</span>
+                    <span>类型二&nbsp12312214445人</span>
+                    <span>总计读者&nbsp12345人</span>
+                </p>
+                <div class="group_block_table">
+                    <table class="table-bordered">
+                        <tr>
+                            <th>姓名</th>
+                            <th>借书证号</th>
+                            <th>读书类型</th>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">002201123123123231231312340451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+
+                    </table>
+                </div>
+                </div>
+            </div>
+             <div class="group_block2">
+                <p class="group_block_title">
+                    单位七
+                     <button class="up_down">
+                    <span class="classify_up"></span>
+                   <i>展开</i>
+                </button>
+                 <div class="cart_out">
+                </p>
+                <p class="group_block_subtitle">
+                    <span>类型一&nbsp124124124345人</span>
+                    <span>类型二&nbsp12312214445人</span>
+                    <span>总计读者&nbsp12345人</span>
+                </p>
+                <div class="group_block_table">
+                    <table class="table-bordered">
+                        <tr>
+                            <th>姓名</th>
+                            <th>借书证号</th>
+                            <th>读书类型</th>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">002201123123123231231312340451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+
+                    </table>
+                </div>
+                </div>
+            </div>
+             <div class="group_block2">
+                <p class="group_block_title">
+                    单位八
+                     <button class="up_down">
+                    <span class="classify_up"></span>
+                   <i>展开</i>
+                </button>
+                 <div class="cart_out">
+                </p>
+                <p class="group_block_subtitle">
+                    <span>类型一&nbsp124124124345人</span>
+                    <span>类型二&nbsp12312214445人</span>
+                    <span>总计读者&nbsp12345人</span>
+                </p>
+                <div class="group_block_table">
+                    <table class="table-bordered">
+                        <tr>
+                            <th>姓名</th>
+                            <th>借书证号</th>
+                            <th>读书类型</th>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">002201123123123231231312340451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+
+                    </table>
+                </div>
+                </div>
+            </div>
+             <div class="group_block2">
+                <p class="group_block_title">
+                    单位九
+                     <button class="up_down">
+                    <span class="classify_up"></span>
+                    <i>展开</i>
+                </button>
+                 <div class="cart_out">
+                </p>
+                <p class="group_block_subtitle">
+                    <span>类型一&nbsp124124124345人</span>
+                    <span>类型二&nbsp12312214445人</span>
+                    <span>总计读者&nbsp12345人</span>
+                </p>
+                <div class="group_block_table">
+                    <table class="table-bordered">
+                        <tr>
+                            <th>姓名</th>
+                            <th>借书证号</th>
+                            <th>读书类型</th>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">002201123123123231231312340451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+
+                    </table>
+                </div>
+                </div>
+            </div>
+             <div class="group_block2">
+                <p class="group_block_title">
+                    单位十
+                     <button class="up_down">
+                    <span class="classify_up"></span>
+                    <i>展开</i>
+                </button>
+                 <div class="cart_out">
+                </p>
+                <p class="group_block_subtitle">
+                    <span>类型一&nbsp124124124345人</span>
+                    <span>类型二&nbsp12312214445人</span>
+                    <span>总计读者&nbsp12345人</span>
+                </p>
+                <div class="group_block_table">
+                    <table class="table-bordered">
+                        <tr>
+                            <th>姓名</th>
+                            <th>借书证号</th>
+                            <th>读书类型</th>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">002201123123123231231312340451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+                        <tr>
+                            <td>名字名字</td>
+                            <td class="card_num">0022040451</td>
+                            <td>读者类型一</td>
+                        </tr>
+
+                    </table>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="center-box">
+        <p class="contact_info">
+            南昌陆军学院图书馆 版权所有   咨询电话：0621-71174（军队）、0791-6871174（地线）   电子邮件：tsg@ncl.mtn   管理入口<br/>
+            技术支持：武汉麦达metadata.net.cn
+        </p>
+        <p class="user_info">
+            当前在线：    123人<br/>
+            今日访问：     23人<br/>
+            历史访问：  12321人
+        </p>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="js/card_reader_detail.js"></script>
+<script type="text/javascript" src="js/card_reader_detail_charts_publish.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        $('.up_down').on('click',function(){
+            $(this).parent().next('div').toggle();         
+            $(this).find('span').toggleClass("classify_1");
+          
+           if($(this).parent().next('div').is(':hidden')){
+               $(this).find('i').text('展开');
+           }else{
+             $(this).find('i').text('收起');
+           }
+
+        });
+        //return image;
+        //location.href = "${pageContext.request.contextPath }/search/toExportDocx?image="+$("#main").find("canvas")[0].toDataURL("image/png");
+        //$("input[name='image']").attr("value",$("#main").find("canvas")[0].toDataURL("image/png"));
+        //$("#fileUp").submit();
+
+    })
+</script>
+</html>

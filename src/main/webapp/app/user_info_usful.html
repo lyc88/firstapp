@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>用户信息数据—利用部分</title>
+
+    <link type="text/css" rel="stylesheet" href="css/all.min.css"/>
+    <style>
+        ul li{
+            list-style: none;
+        }
+        .report_intro{
+            width: 1024px;
+            height: 122px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 18px;
+            margin-bottom: 18px;
+            position: relative;
+        }
+        .report_intro .report_pic{
+            width: 100%;
+            height: 100%;
+        }
+        .report_dateGroup{
+            display: inline-block;
+            width: 260px;
+            height: 30px;
+            position: absolute;
+            right: 140px;
+            top: 30px;
+        }
+        .report_btn{
+            display: inline-block;
+            width: 90px;
+            height: 30px;
+            color: #fff;
+            background-color: #019b8d;
+            font-size: 12px;
+            line-height: 30px;
+            text-align: center;
+            position: absolute;
+            right: 20px;
+            top: 54px;
+            border: none;
+            outline: none;
+            border-radius: 6px;
+        }
+   .report_conten{
+       overflow: hidden;
+       width: 1024px;
+       height: auto;
+       margin: 20px auto;
+
+   }
+    .conten_title{
+        width: 98%;
+        margin-left: 2%;
+        height: 40px;
+        position: relative;
+        background-color: #eee;
+        border-bottom: 1px solid #0bc8a2;
+    }
+        .content_pic{
+            width: 221px;
+            height: 53px;
+            position: absolute;
+            left: -2%;
+            top: -13px;
+        }
+        .report_nav{
+            width: 100%;
+            height: auto;
+            margin-top: -6px;
+            padding: 0;
+            background-color: #fff;
+        }
+        .report_nav>li{
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            color: #333;
+            font-size: 16px;
+            box-sizing: border-box;
+            padding-left: 26px;
+            border-bottom: 1px solid #ddd;
+        }
+        .report_nav>li.allSelec_li{
+            background-color: #fafafa;
+        }
+        .report_nav>li>input{
+            margin-right: 20px;
+            width: 16px;
+            height: 16px;
+            margin-bottom: -2px;
+        }
+        .report_dateGroup>input{
+            width: 100px;
+            height: 100%;
+            border: 1px solid #ddd;
+            outline: none;
+        }
+        .report_dateGroup>span{
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="center-box">
+        <span class="logo"></span>
+        <span class="name_image"></span>
+        <div class="useranddata">
+            <div class="log">
+                <button class="login">
+                    登录
+                </button>
+                <button>
+                    注册
+                </button>
+            </div>
+            <div class="data">
+                <span></span>
+                <p>星期四&nbsp&nbsp2016-11-28</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="tool_bar">
+    <div class="center-box">
+        <div class="bigdata">
+            <p>信息资源及利用大数据</p>
+            <span></span>
+        </div>
+        <div class="reader_module_button">
+            <a class="reader_reproter">
+                <span></span>
+                读者分析报告
+            </a>
+            <a class="resource_reporter">
+                <span></span>
+                资源分析报告
+            </a>
+            <a class="use_reporter">
+                <span></span>
+                利用分析报告
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="report_intro">
+ <img src="images/report_banner.png" class="report_pic">
+  <div class="report_dateGroup">
+          <input placeholder=" 起始日期" size="16"  type="text" value="" readonly="" class="laydate-icon" onclick=" laydate({format:'YYYY'});">
+         <span>年 一</span>
+          <input placeholder=" 截止日期" size="16"  type="text" value="" readonly="" class="laydate-icon" onclick=" laydate({format:'YYYY'});"><span>年</span>
+
+  </div>
+    <button type="button" class="report_btn">生成文档</button>
+</div>
+
+<div class="report_conten">
+  <h1 class="conten_title">
+      <img src="images/report_content.png"  class="content_pic">
+  </h1>
+    <ul class="report_nav">
+        <li class="allSelec_li"><input type="checkbox" class="all_selec">全选</li>
+        <li><input type="checkbox" name="check" class="all_selec">持证读者单位</li>
+        <li><input type="checkbox"  name="check" class="all_selec">持证读者类型</li>
+        <li><input type="checkbox"  name="check" class="all_selec">按单位统计读者人数</li>
+        <li><input type="checkbox"  name="check" class="all_selec">按年统计</li>
+        <li><input type="checkbox"  name="check" class="all_selec">按月统计</li>
+    </ul>
+
+</div>
+
+
+<div class="footer" style="margin-top: 100px;">
+    <div class="center-box">
+        <p class="contact_info" style="  float: left; margin-left: 30px;">
+            南昌陆军学院图书馆 版权所有 咨询电话：0621-71174（军队）、0791-6871174（地线） 电子邮件：tsg@ncl.mtn 管理入口<br/>
+            技术支持：武汉麦达metadata.net.cn
+        </p>
+        <p class="user_info" style="float: right;">
+            当前在线： 123人<br/>
+            今日访问： 23人<br/>
+            历史访问： 1231人
+        </p>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<script type="text/javascript" src="报告分析/xysg/js/laydate/laydate2.js"></script>
+
+<script>
+    $(function(){
+        $(".all_selec").click(function(){
+            var flag = $(this).is(":checked");
+            var checkItems = $("input[name='check']");
+            for (var i = 0; i < checkItems.length; i++) {
+                checkItems[i].checked = flag;
+            }
+        });
+    })
+</script>
+</body>
+
+</html>

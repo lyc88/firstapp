@@ -1,0 +1,745 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>检索细览</title>
+    <link type="text/css" rel="stylesheet" href="css/all.min.css">
+</head>
+<body class="search_tool_index">
+<div class="header">
+    <div class="center-box">
+        <span class="logo"></span>
+        <span class="name_image"></span>
+        <div class="useranddata">
+            <div class="log">
+                <button class="login">
+                    登录
+                </button>
+                <button>
+                    注册
+                </button>
+            </div>
+            <div class="data">
+                <span></span>
+                <p>星期四&nbsp&nbsp2016-11-28</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="tool_bar">
+    <div class="center-box">
+        <div class="search">
+            <p>统一检索界面</p>
+            <span></span>
+        </div>
+        <div class="module_button">
+            <a class="merge_search">
+                <span></span>
+                统一搜索
+            </a>
+            <a class="data_analyze">
+                <span></span>
+                数据分析
+            </a>
+            <a class="user">
+                <span></span>
+                个人中心
+            </a>
+        </div>
+    </div>
+</div>
+<div class="choose_bar">
+    <div class="center-box">
+        <div class="search_box">
+            <div class="dropdown keyword">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                    全部
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">全部</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">科学</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">医学</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">艺术</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">化学工程</a></li>
+                </ul>
+            </div>
+            <div class="search_input">
+                <div class="input_area">
+                    <span></span>
+                    <input placeholder="请输入您要检索的内容"/>
+                </div>
+                <button>
+                    搜索
+                </button>
+            </div>
+            <a class="highend_search" data-toggle="modal" data-target="#myModal">高级检索</a>
+        </div>
+        <div class="search_select">
+            <div class="time_line">
+                <p>时间:</p>
+                <div class="input-append date form_datetime">
+                    <input size="16" type="text" value="" readonly>
+                    <span class="add-on"><i class="glyphicon icon-th"></i></span>
+                </div>
+                <p>至</p>
+                <div class="input-append date form_datetime">
+                    <input size="16" type="text" value="" readonly>
+                    <span class="add-on"><i class="glyphicon icon-th"></i></span>
+                </div>
+                <button class="btn btn-warning btn-sm" id="rm_timeline">所有时间</button>
+            </div>
+            <div class="research_select">
+                <input type="checkbox" id="research">
+                <label for="research">重新搜索</label>
+                <input type="checkbox" id="result_search">
+                <label for="result_search">在结果中搜索</label>
+                <input type="checkbox" id="result_add">
+                <label for="result_add">在结果中添加</label>
+                <input type="checkbox" id="result_del">
+                <label for="result_del">在结果中去除</label>
+            </div>
+        </div>
+    </div>
+</div>
+<!--搜索结果的有关信息-->
+<div class="result_tool">
+    <div class="center-box">
+        <div class="search_info">
+            <p class="key_word">
+                检索词:
+                <span>坦克</span>
+            </p>
+            <p class="result">
+                检索结果:
+                <span>2,241</span>
+                条结果
+            </p>
+            <p class="time">
+                检索时间:
+                <span>0.213</span>
+                秒
+            </p>
+        </div>
+        <div class="deal_result">
+            <div class="chose_all">
+                <input type="checkbox" id="chose_all"/>
+                <label for="chose_all">全选</label>
+            </div>
+            <a class="exports">
+                <span></span>
+                批量导出
+            </a>
+            <div class="dropdown sort">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown">
+                    按时间
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">按热度</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">按阅读量</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">按推荐数</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--搜索结果部分-->
+<div class="mainpart">
+    <div class="center-box">
+        <!--左侧的分类选择-->
+        <div class="classify">
+            <div class="all_classify">
+                <p class="all_classify_title">全部分类</p>
+                <div class="classify_choise">
+                    <p>分类选择</p>
+                    <button id="getall">全选</button>
+                    <button id="rmall">删除</button>
+                </div>
+                <div class="classify_detail">
+                    <!--学术文章-->
+                    <div class="classify_detail_title">
+                        <button class="article"></button>
+                        <input class="article" type="checkbox" id="article">
+                        <label for="article">学术文章</label>
+                        <p>(12312)</p>
+                    </div>
+                    <div class="classify_detail_content article">
+                        <input type="checkbox" id="ncaa" >
+                        <label for="ncaa">
+                            中文科技期刊数据库
+                        </label>
+                        <span>(123123)</span>
+                    </div>
+                    <div class="classify_detail_content article">
+                        <input type="checkbox" id="ncab" >
+                        <label for="ncab">
+                            中文科技期刊数据库
+                        </label>
+                        <span>(123123)</span>
+                    </div>
+                    <div class="classify_detail_content article">
+                        <input type="checkbox" id="ncac" >
+                        <label for="ncac">
+                            中文科技期刊数据库
+                        </label>
+                        <span>(123123)</span>
+                    </div>
+                    <div class="classify_detail_content article">
+                        <input type="checkbox" id="ncad" >
+                        <label for="ncad">
+                            中文科技期刊数据库
+                        </label>
+                        <span>(123123)</span>
+                    </div>
+                    <div class="classify_detail_content article">
+                        <input type="checkbox" id="ncae" >
+                        <label for="ncae">
+                            中文科技期刊数据库
+                        </label>
+                        <span>(123123)</span>
+                    </div>
+                    <div class="classify_detail_content article">
+                        <input type="checkbox" id="ncaf" >
+                        <label for="ncaf">
+                            中文科技期刊数据库
+                        </label>
+                        <span>(123123)</span>
+                    </div>
+                    <div class="classify_detail_content article">
+                        <input type="checkbox" id="ncag" >
+                        <label for="ncag">
+                            中文科技期刊数据库
+                        </label>
+                        <span>(123123)</span>
+                    </div>
+                    <div class="classify_detail_content article">
+                        <input type="checkbox" id="ncah" >
+                        <label for="ncah">
+                            中文科技期刊数据库
+                        </label>
+                        <span>(123123)</span>
+                    </div>
+                    <!--数字图书-->
+                    <div class="classify_detail_title">
+                        <button class="media_info"></button>
+                        <input class="media_info" type="checkbox" id="ibook">
+                        <label for="ibook">数字图书</label>
+                        <p>(12312)</p>
+                    </div>
+                    <div class="classify_detail_content media_info">
+                        <input type="checkbox" id="ncai" >
+                        <label for="ncai">
+                            中文优秀硕士学位论文全文数据库
+                        </label>
+                        <span>(123123)</span>
+                    </div>
+                    <div class="classify_detail_content media_info">
+                        <input type="checkbox" id="ncaj" >
+                        <label for="ncaj">
+                            中文科技期刊数据库
+                        </label>
+                        <span>(123123)</span>
+                    </div>
+                    <!--纸质图书-->
+                    <div class="classify_detail_title">
+                        <button class="books"></button>
+                        <input class="books" type="checkbox" id="realbook">
+                        <label for="realbook">纸质图书</label>
+                        <p>(12312)</p>
+                    </div>
+                    <!--图像-->
+                    <div class="classify_detail_title">
+                        <button class="pictures_info"></button>
+                        <input class="pictures_info" type="checkbox" id="images">
+                        <label for="images">图像</label>
+                        <p>(12312)</p>
+                    </div>
+                    <!--视频-->
+                    <div class="classify_detail_title">
+                        <button class="video_info"></button>
+                        <input class="video_info"  type="checkbox" id="movie">
+                        <label  for=movie>视频</label>
+                        <p>(12312)</p>
+                    </div>
+                    <!--外文-->
+                    <div class="classify_detail_title">
+                        <button class="overseas_info"></button>
+                        <input class="overseas_info" type="checkbox" id="overseas">
+                        <label for="overseas">外文</label>
+                        <p>(12312)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chinesebook_classify">
+                <p class="chinesebook_classify_title">中国图书法分类</p>
+                <div class="classify_detail_title">
+                    <input type="checkbox" id="army">
+                    <label for="army">学术文章</label>
+                    <p>(12312)</p>
+                </div>
+                <div class="classify_detail_title">
+                    <input type="checkbox" id="book">
+                    <label for="book">纸质图书</label>
+                    <p>(12312)</p>
+                </div>
+                <div class="classify_detail_title">
+                    <input type="checkbox" id="image">
+                    <label for="image">图像</label>
+                    <p>(12312)</p>
+                </div>
+                <div class="classify_detail_title">
+                    <input type="checkbox" id="video">
+                    <label for="video">视频</label>
+                    <p>(12312)</p>
+                </div>
+                <div class="classify_detail_title">
+                    <input type="checkbox" id="overseasa">
+                    <label for="overseasa" >外文</label>
+                    <p>(1231)</p>
+                </div>
+                <div class="classify_detail_title">
+                    <input type="checkbox" id="overseasb">
+                    <label for="overseasb">外文</label>
+                    <p>(523)</p>
+                </div>
+                <div class="classify_detail_title">
+                    <input type="checkbox" id="overseasc">
+                    <label for="overseasc">外文</label>
+                    <p>(8112)</p>
+                </div>
+            </div>
+        </div>
+        <!--右侧搜索结果列表-->
+        <div class="search_result">
+            <div class="numchoise">
+                <p>显示条数:</p>
+                <button>每页10条</button>
+                <button>每页20条</button>
+                <button>每页50条</button>
+                <button>每页100条</button>
+            </div>
+            <div class="result_list">
+                <div class="result_card">
+                    <input type="checkbox" >
+                    <a class="card_title" href="/search_detail.html">第三代<span>坦克</span>发展趋势12312312313123132131</a>
+                    <p class="card_date">时间:<span>2016-3</span></p>
+                    <p class="card_detail">
+                        作者 : 郭敬明<br/>
+                        来源 : 中信出版社<br/>
+                        资源类型 : 图书/论文
+                    </p>
+                    <div class="card_toolbutton">
+                        <button class="like">
+                            <span></span>
+                            收&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp藏
+                        </button>
+                        <button class="card_download">
+                            <span></span>
+                            下载原文
+                        </button>
+                        <button class="card_export">
+                            <span></span>
+                            导出摘要
+                        </button>
+                    </div>
+                </div>
+                <div class="result_card">
+                    <input type="checkbox" >
+                    <a class="card_title">第三代<span>坦克</span>发展趋势</a>
+                    <p class="card_date">时间:<span>2016-3</span></p>
+                    <p class="card_detail">
+                        作者 : 郭敬明<br/>
+                        来源 : 中信出版社<br/>
+                        资源类型 : 图书/论文
+                    </p>
+                    <div class="card_toolbutton">
+                        <button class="like">
+                            <span></span>
+                            收&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp藏
+                        </button>
+                        <button class="card_download">
+                            <span></span>
+                            下载原文
+                        </button>
+                        <button class="card_export">
+                            <span></span>
+                            导出摘要
+                        </button>
+                    </div>
+                </div>
+                <div class="result_card">
+                    <input type="checkbox" >
+                    <a class="card_title">第三代<span>坦克</span>发展趋势</a>
+                    <p class="card_date">时间:<span>2016-3</span></p>
+                    <p class="card_detail">
+                        作者 : 郭敬明<br/>
+                        来源 : 中信出版社<br/>
+                        资源类型 : 图书/论文
+                    </p>
+                    <div class="card_toolbutton">
+                        <button class="like">
+                            <span></span>
+                            收&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp藏
+                        </button>
+                        <button class="card_download">
+                            <span></span>
+                            下载原文
+                        </button>
+                        <button class="card_export">
+                            <span></span>
+                            导出摘要
+                        </button>
+                    </div>
+                </div>
+                <div class="result_card">
+                    <input type="checkbox" >
+                    <a class="card_title">第三代<span>坦克</span>发展趋势</a>
+                    <p class="card_date">时间:<span>2016-3</span></p>
+                    <p class="card_detail">
+                        作者 : 郭敬明<br/>
+                        来源 : 中信出版社<br/>
+                        资源类型 : 图书/论文
+                    </p>
+                    <div class="card_toolbutton">
+                        <button class="like">
+                            <span></span>
+                            收&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp藏
+                        </button>
+                        <button class="card_download">
+                            <span></span>
+                            下载原文
+                        </button>
+                        <button class="card_export">
+                            <span></span>
+                            导出摘要
+                        </button>
+                    </div>
+                </div>
+                <div class="result_card">
+                    <input type="checkbox" >
+                    <a class="card_title">第三代<span>坦克</span>发展趋势</a>
+                    <p class="card_date">时间:<span>2016-3</span></p>
+                    <p class="card_detail">
+                        作者 : 郭敬明<br/>
+                        来源 : 中信出版社<br/>
+                        资源类型 : 图书/论文
+                    </p>
+                    <div class="card_toolbutton">
+                        <button class="like">
+                            <span></span>
+                            收&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp藏
+                        </button>
+                        <button class="card_download">
+                            <span></span>
+                            下载原文
+                        </button>
+                        <button class="card_export">
+                            <span></span>
+                            导出摘要
+                        </button>
+                    </div>
+                </div>
+                <div class="result_card">
+                    <input type="checkbox" >
+                    <a class="card_title">第三代<span>坦克</span>发展趋势</a>
+                    <p class="card_date">时间:<span>2016-3</span></p>
+                    <p class="card_detail">
+                        作者 : 郭敬明<br/>
+                        来源 : 中信出版社<br/>
+                        资源类型 : 图书/论文
+                    </p>
+                    <div class="card_toolbutton">
+                        <button class="like">
+                            <span></span>
+                            收&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp藏
+                        </button>
+                        <button class="card_download">
+                            <span></span>
+                            下载原文
+                        </button>
+                        <button class="card_export">
+                            <span></span>
+                            导出摘要
+                        </button>
+                    </div>
+                </div>
+                <div class="result_card">
+                    <input type="checkbox" >
+                    <a class="card_title">第三代<span>坦克</span>发展趋势</a>
+                    <p class="card_date">时间:<span>2016-3</span></p>
+                    <p class="card_detail">
+                        作者 : 郭敬明<br/>
+                        来源 : 中信出版社<br/>
+                        资源类型 : 图书/论文
+                    </p>
+                    <div class="card_toolbutton">
+                        <button class="like">
+                            <span></span>
+                            收&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp藏
+                        </button>
+                        <button class="card_download">
+                            <span></span>
+                            下载原文
+                        </button>
+                        <button class="card_export">
+                            <span></span>
+                            导出摘要
+                        </button>
+                    </div>
+                </div>
+                <div class="result_card">
+                    <input type="checkbox" >
+                    <a class="card_title">第三代<span>坦克</span>发展趋势</a>
+                    <p class="card_date">时间:<span>2016-3</span></p>
+                    <p class="card_detail">
+                        作者 : 郭敬明<br/>
+                        来源 : 中信出版社<br/>
+                        资源类型 : 图书/论文
+                    </p>
+                    <div class="card_toolbutton">
+                        <button class="like">
+                            <span></span>
+                            收&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp藏
+                        </button>
+                        <button class="card_download">
+                            <span></span>
+                            下载原文
+                        </button>
+                        <button class="card_export">
+                            <span></span>
+                            导出摘要
+                        </button>
+                    </div>
+                </div>
+                <div class="result_card">
+                    <input type="checkbox" >
+                    <a class="card_title">第三代<span>坦克</span>发展趋势</a>
+                    <p class="card_date">时间:<span>2016-3</span></p>
+                    <p class="card_detail">
+                        作者 : 郭敬明<br/>
+                        来源 : 中信出版社<br/>
+                        资源类型 : 图书/论文
+                    </p>
+                    <div class="card_toolbutton">
+                        <button class="like">
+                            <span></span>
+                            收&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp藏
+                        </button>
+                        <button class="card_download">
+                            <span></span>
+                            下载原文
+                        </button>
+                        <button class="card_export">
+                            <span></span>
+                            导出摘要
+                        </button>
+                    </div>
+                </div>
+                <div class="result_card">
+                    <input type="checkbox" >
+                    <a class="card_title">第三代<span>坦克</span>发展趋势</a>
+                    <p class="card_date">时间:<span>2016-3</span></p>
+                    <p class="card_detail">
+                        作者 : 郭敬明<br/>
+                        来源 : 中信出版社<br/>
+                        资源类型 : 图书/论文
+                    </p>
+                    <div class="card_toolbutton">
+                        <button class="like">
+                            <span></span>
+                            收&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp藏
+                        </button>
+                        <button class="card_download">
+                            <span></span>
+                            下载原文
+                        </button>
+                        <button class="card_export">
+                            <span></span>
+                            导出摘要
+                        </button>
+                    </div>
+                </div>
+                <div class="result_card">
+                    <input type="checkbox" >
+                    <a class="card_title">第三代<span>坦克</span>发展趋势</a>
+                    <p class="card_date">时间:<span>2016-3</span></p>
+                    <p class="card_detail">
+                        作者 : 郭敬明<br/>
+                        来源 : 中信出版社<br/>
+                        资源类型 : 图书/论文
+                    </p>
+                    <div class="card_toolbutton">
+                        <button class="like">
+                            <span></span>
+                            收&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp藏
+                        </button>
+                        <button class="card_download">
+                            <span></span>
+                            下载原文
+                        </button>
+                        <button class="card_export">
+                            <span></span>
+                            导出摘要
+                        </button>
+                    </div>
+                </div>
+                <!--分页-->
+                <nav>
+                    <ul class="pagination">
+                        <li><a href="#">&laquo;</a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="center-box">
+        <p class="contact_info">
+            南昌陆军学院图书馆 版权所有   咨询电话：0621-71174（军队）、0791-6871174（地线）   电子邮件：tsg@ncl.mtn   管理入口<br/>
+            技术支持：武汉麦达metadata.net.cn
+        </p>
+        <p class="user_info">
+            当前在线：    123人<br/>
+            今日访问：     23人<br/>
+            历史访问：  12321人
+        </p>
+    </div>
+</div>
+<!--模拟框-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog search_dialog">
+        <div class="modal-content">
+            <div class="dialog_header">
+                高级搜索
+                <a data-dismiss="modal" aria-hidden="true">×</a>
+            </div>
+            <div class="dialog_main">
+                <div class="dialog_mainsearch">
+                    <div class="dropdown" style="visibility: hidden">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dialog_dropdownMenu0" data-toggle="dropdown">
+                            并且
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dialog_dropdownMenu0">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">并且</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">或者</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">不包含</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dialog_dropdownMenu1" data-toggle="dropdown">
+                            题名
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dialog_dropdownMenu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">黄晓明</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">郭敬明</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">姚明</a></li>
+                        </ul>
+                    </div>
+                    <input  placeholder="检索词">
+                    <a class="dialog_add">+</a>
+                </div>
+
+                <div class="dialog_search">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dialog_dropdownMenu2" data-toggle="dropdown">
+                            并且
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dialog_dropdownMenu2">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">并且</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">或者</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">不包含</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dialog_dropdownMenu3" data-toggle="dropdown">
+                            题名
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dialog_dropdownMenu3">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">黄晓明</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">郭敬明</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">姚明</a></li>
+                        </ul>
+                    </div>
+                    <input  placeholder="检索词">
+                    <a class="dialog_rm">-</a>
+                </div>
+
+                <div class="dialog_search">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dialog_dropdownMenu4" data-toggle="dropdown">
+                            并且
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dialog_dropdownMenu4">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">并且</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">或者</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">不包含</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dialog_dropdownMenu5" data-toggle="dropdown">
+                            题名
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dialog_dropdownMenu5">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">黄晓明</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">郭敬明</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">姚明</a></li>
+                        </ul>
+                    </div>
+                    <input  placeholder="检索词">
+                    <a class="dialog_rm">-</a>
+                </div>
+
+                <div class="dialog_search">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dialog_dropdownMenu6" data-toggle="dropdown">
+                            并且
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dialog_dropdownMenu6">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">并且</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">或者</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">不包含</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dialog_dropdownMenu7" data-toggle="dropdown">
+                            题名
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dialog_dropdownMenu7">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">黄晓明</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">郭敬明</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">姚明</a></li>
+                        </ul>
+                    </div>
+                    <input  placeholder="检索词">
+                    <a class="dialog_rm">-</a>
+                </div>
+                <button class="dialog_searchbutton">
+                    检索
+                </button>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</html>

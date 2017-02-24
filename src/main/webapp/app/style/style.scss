@@ -1,0 +1,4606 @@
+@import "../css/sprite";
+
+@mixin block {
+  display: block !important;
+}
+
+@mixin left {
+  display: block !important;
+  float: left;
+}
+
+//分类的边框类
+@mixin classifyborder {
+  border-bottom: solid 1px #e3e1e1;
+  border-right: solid 1px #e3e1e1;
+  border-left: solid 1px #e3e1e1;
+  border-top: none;
+}
+
+//正文列表card的下划线
+@mixin card_border {
+  border-bottom: solid 1px #e3e1e1;
+}
+
+//省略较长文字
+@mixin dot {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+button {
+  outline: none;
+}
+
+//强制改变插件样式
+.datetimepicker {
+  z-index: 9999 !important;
+  .datetimepicker-months{
+    top:inherit!important;
+  }
+  .datetimepicker-days{
+    top:inherit!important;
+  }
+}
+
+.search_tool_index {
+  .datetimepicker {
+    top: 314px !important;
+  }
+}
+
+.center-box {
+  padding-top: 1px;
+  width: 1030px;
+  height: inherit;
+  margin: 0 auto;
+}
+
+//让日期输入框在ie中显示正常
+.begging_time {
+  input {
+    line-height: 24px;
+  }
+}
+
+.ending_time {
+  input {
+    line-height: 24px;
+  }
+}
+
+.classify_down{
+  @include left;
+  @include sprite($title-down);
+  margin-left: 4px;
+  margin-top: 11px;
+}
+body {
+  background-image: url(../images/body_background.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  overflow: auto;
+  width: auto;
+  height: auto;
+  min-width: 1030px;
+  .header {
+    width: auto;
+    min-width: 1030px;
+    height: 105px;
+    background: white;
+    .logo {
+      margin-top: 7px;
+      padding: 3px;
+      width: 82px;
+      height: 92px;
+      @include sprite($logo);
+      @include block;
+      @include left;
+    }
+    .name_image {
+      @include block;
+      @include left;
+      margin: 22px 0 0 41px;
+      height: 64px;
+      width: 441px;
+      @include sprite($name);
+    }
+    .useranddata {
+      height: 55px;
+      width: 182px;
+      margin: 28px 6px 0 262px;
+      @include left;
+      .log {
+        margin-left: 55px;
+        button {
+          outline: none;
+          border: none;
+          width: 55px;
+          height: 33px;
+          border-radius: 5px;
+          background-color: #019b8d;
+          font-family: MicrosoftYaHei;
+          line-height: 30px;
+          font-size: 16px;
+          font-weight: bold;
+          color: #ffffff;
+          &:active {
+            background-color: darken(#019b8d, 10%);
+          }
+        }
+      }
+      .data {
+        margin-top: 8px;
+        width: inherit;
+        height: 17px;
+        span {
+          @include block;
+          @include left;
+          @include sprite($data_icon);
+          width: 17px;
+          height: 17px;
+          margin-right: 15px;
+        }
+        p {
+          @include left;
+          color: #019b8d;
+          height: 15px;
+          font-family: Microsoft YaHei;
+          font-size: 16px;
+          line-height: 21px;
+        }
+      }
+    }
+  }
+  .tool_bar {
+    width: auto;
+    min-width: 1030px;
+    height: 57px;
+    background-color: #019b8d;
+    .search {
+      @include left;
+      box-sizing: content-box;
+      width: 190px;
+      height: 24px;
+      padding-top: 15px;
+      p {
+        height: 24px;
+        font-family: Microsoft YaHei;
+        font-size: 24px;
+        line-height: 24px;
+        color: #ffffff;
+        @include left;
+      }
+      span {
+        @include block;
+        @include left;
+        margin-left: 15px;
+        width: 23px;
+        height: 23px;
+        @include sprite($search);
+      }
+    }
+    .module_button {
+      @include left;
+      width: 288px;
+      height: 56px;
+      margin-left: 530px;
+      a {
+        @include block;
+        @include left;
+        text-decoration: none;
+        width: 96px;
+        height: 56px;
+        font-family: Microsoft YaHei;
+        font-size: 16px;
+        letter-spacing: 1px;
+        text-align: center;
+        color: #ffffff;
+        &:hover {
+          cursor: pointer;
+          background-color: #017a6f;
+        }
+        span {
+          margin-top: 12px;
+          margin-left: 38px;
+          @include block;
+          width: 16px;
+          height: 16px;
+        }
+      }
+      .merge_search {
+        span {
+          @include sprite($merge-seach);
+        }
+      }
+      .data_analyze {
+        span {
+          @include sprite($data);
+        }
+      }
+      .user {
+        span {
+          @include sprite($user);
+        }
+      }
+    }
+    .bigdata {
+      @include left;
+      box-sizing: content-box;
+      width: 500px;
+      height: 24px;
+      padding-top: 15px;
+      p {
+        height: 24px;
+        font-family: Microsoft YaHei;
+        font-size: 24px;
+        line-height: 24px;
+        color: #ffffff;
+        @include left;
+      }
+      span {
+        @include block;
+        @include left;
+        margin-left: 15px;
+        margin-top: 4px;
+        width: 23px;
+        height: 23px;
+        @include sprite($bigdata);
+      }
+    }
+    .reader_module_button {
+      @include left;
+      width: 410px;
+      height: 56px;
+      margin-left: 100px;
+      a {
+        @include block;
+        @include left;
+        text-decoration: none;
+        width: 135px;
+        height: 56px;
+        font-family: Microsoft YaHei;
+        font-size: 16px;
+        letter-spacing: 1px;
+        text-align: center;
+        color: #ffffff;
+        &:hover {
+          cursor: pointer;
+          background-color: #017a6f;
+        }
+        span {
+          margin-top: 12px;
+          margin-left: 58px;
+          @include block;
+          width: 16px;
+          height: 16px;
+        }
+      }
+      .reader_reproter {
+        span {
+          @include sprite($user-reporter);
+        }
+      }
+      .resource_reporter {
+        span {
+          @include sprite($resource-reporter);
+          margin-bottom: 5px;
+        }
+      }
+      .use_reporter {
+        span {
+          @include sprite($use-reporter);
+        }
+      }
+    }
+  }
+  .choose_bar {
+    padding-top: 1px;
+    width: auto;
+    min-width: 1030px;
+    height: 167px;
+    background-color: #eeeeee;
+    .search_box {
+      margin-top: 30px;
+      margin-left: 25px;
+      width: 930px;
+      height: 70px;
+      opacity: 0.7;
+      border-radius: 12px;
+      background-color: #ffffff;
+      border: solid 1px #a6a7a7;
+      .keyword {
+        @include left;
+        margin-left: 26px;
+        margin-top: 16px;
+        button {
+          width: 137.5px;
+          font-family: MicrosoftYaHei Regular;
+          font-size: 16px;
+          font-weight: 300;
+          letter-spacing: 0.5px;
+          color: #898989;
+          background-color: #ffffff;
+          border: solid 1px #a6a7a7;
+        }
+      }
+      .search_input {
+        @include left;
+        height: 36px;
+        margin-top: 16px;
+        margin-left: 17px;
+        .input_area {
+          @include left;
+          width: 526px;
+          height: 36px;
+          background-color: #ffffff;
+          border: solid 1px rgb(170, 170, 170);
+          span {
+            @include block;
+            @include left;
+            height: 18px;
+            width: 18px;
+            margin: 10px 12px 0 13px;
+            @include sprite($input-search);
+          }
+          input {
+            line-height: 30px;
+            width: 470px;
+            border: none;
+            outline: none;
+            font-family: MicrosoftYaHei Regular;
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            color: #898989;
+            height: 34px;
+          }
+        }
+        button {
+          @include left;
+          border: none;
+          outline: none;
+          width: 90px;
+          height: 36px;
+          background-color: #019b8d;
+          font-family: Microsoft YaHei;
+          font-size: 18px;
+          line-height: 28px;
+          letter-spacing: 0.5px;
+          color: #ffffff;
+          &:active {
+            background-color: darken(#019b8d, 10%);
+          }
+        }
+      }
+      .highend_search {
+        @include block;
+        @include left;
+        margin-top: 25px;
+        margin-left: 26px;
+        cursor: pointer;
+        width: 77px;
+        height: 18px;
+        font-family: Microsoft YaHei;
+        font-size: 18px;
+        line-height: 18px;
+        letter-spacing: 0.5px;
+        color: #019b8d;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+    .search_select {
+      @include left;
+      width: 900px;
+      margin-top: 20px;
+      margin-left: 50px;
+      .time_line {
+        @include left;
+        #rm_timeline {
+          outline: none;
+          margin-left: 15px;
+          margin-top: -3px;
+          height: 30px !important;
+          @include left;
+        }
+        p {
+          @include block;
+          @include left;
+          line-height: 26px;
+          margin: 0 8px;
+          font-family: MicrosoftYaHei Regular;
+          font-size: 14px;
+          font-weight: 300;
+          letter-spacing: 0.4px;
+          color: #2e2e2e;
+        }
+        div {
+          @include block;
+          @include left;
+          input {
+            width: 75px;
+          }
+        }
+      }
+      .research_select {
+        label {
+          @include left;
+          margin-left: 7px;
+          margin-top: 5px;
+          font-family: MicrosoftYaHei Regular;
+          font-size: 14px;
+          font-weight: 300;
+          line-height: 20px;
+          letter-spacing: 0.4px;
+          color: #2f2f2f;
+        }
+        input {
+          margin-top: 9px;
+          margin-left: 33px;
+          @include left;
+        }
+      }
+    }
+  }
+  .result_tool {
+    padding-top: 1px;
+    height: 60px;
+    .center-box {
+      border-bottom: solid #019b8d;
+      height: 60px;
+    }
+    .search_info {
+      @include left;
+      height: 60px;
+      margin-top: 32px;
+      p {
+        @include left;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+        line-height: 14px;
+        letter-spacing: 0.4px;
+        color: #898989;
+        span {
+          color: #ffa303;
+        }
+      }
+    }
+    .deal_result {
+      @include left;
+      width: 285px;
+      height: 60px;
+      margin-top: 32px;
+      margin-left: 380px;
+      .chose_all {
+        input {
+          @include left;
+          margin: 0 15px 0 0;
+        }
+        label {
+          @include left;
+          font-family: Microsoft YaHei;
+          font-size: 14px;
+          line-height: 14px;
+          letter-spacing: 0.4px;
+          color: #898989;
+        }
+      }
+      .exports {
+        @include left;
+        cursor: pointer;
+        height: 14px;
+        margin-left: 30px;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+        line-height: 14px;
+        letter-spacing: 0.4px;
+        color: #898989;
+        span {
+          @include left;
+          @include block;
+          width: 14px;
+          height: 13px;
+          margin-right: 15px;
+          @include sprite($export);
+        }
+      }
+      .sort {
+        @include left;
+        margin-left: 20px;
+        margin-top: -15px;
+        width: 82px;
+      }
+    }
+  }
+  .mainpart {
+    overflow-y: auto;
+    overflow-x: hidden;
+    clear: both;
+    padding-top: 1px;
+    width: auto;
+    min-width: 1030px;
+    height: auto;
+    margin-top: 17px;
+    .classify {
+      width: 280px;
+      height: auto;
+      @include left;
+      .all_classify {
+        width: inherit;
+        height: auto;
+        .all_classify_title {
+          @include block;
+          width: 280px;
+          height: 40px;
+          @include sprite($title-background);
+          font-family: Microsoft YaHei;
+          font-size: 18px;
+          line-height: 40px;
+          letter-spacing: 0.5px;
+          color: #ffffff;
+          text-indent: 40px;
+          margin-bottom: 0;
+        }
+        .classify_choise {
+          height: 30px;
+          @include classifyborder;
+          p {
+            @include block;
+            @include left;
+            margin: 0 95px 0 0;
+            text-indent: 10px;
+            font-family: MicrosoftYaHei Regular;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 27px;
+            letter-spacing: 0.4px;
+            color: #1c1c1c;
+          }
+          button {
+            @include left;
+            padding: 0;
+            border: solid 1px #999999;
+            width: 45px;
+            height: 20px;
+            margin-top: 4px;
+            margin-right: 10px;
+            font-family: MicrosoftYaHei Regular;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 10px;
+            letter-spacing: 0.4px;
+            color: #999999;
+            background: none;
+            &:hover {
+              background: #eee;
+            }
+          }
+        }
+        .classify_detail {
+          width: 280px;
+          height: auto;
+          .classify_detail_title {
+            @include classifyborder;
+            height: 40px;
+            width: 280px;
+            .hidemore {
+              @include sprite($hide-more);
+            }
+            .showmore {
+              @include sprite($show-more);
+            }
+            button {
+              @include left;
+              margin: 13px 10px;
+              border: none;
+              width: 13px;
+              height: 12px;
+            }
+            input {
+              @include left;
+              margin-right: 10px;
+              margin-top: 13px;
+            }
+            label {
+              @include left;
+              margin-bottom: 0;
+              font-family: MicrosoftYaHei Regular;
+              font-size: 16px;
+              font-weight: 300;
+              line-height: 40px;
+              letter-spacing: 0.5px;
+              color: #595959;
+            }
+            p {
+              margin-bottom: 0;
+              float: right;
+              font-family: MicrosoftYaHei Regular;
+              font-size: 16px;
+              font-weight: 300;
+              line-height: 40px;
+              letter-spacing: 0.5px;
+              color: #ffa303;
+              margin-right: 8px;
+            }
+          }
+          .classify_detail_content {
+            @include classifyborder;
+            height: 30px;
+            padding: 5px;
+            input {
+              @include left;
+              margin-left: 5px;
+              margin-right: 5px;
+            }
+            label {
+              @include block;
+              @include dot;
+              float: left;
+              width: 185px;
+              height: 20px;
+              font-family: MicrosoftYaHei Regular;
+              font-size: 12px;
+              font-weight: 300;
+              line-height: 20px;
+              letter-spacing: 0.4px;
+              color: #1c1c1c;
+            }
+            span {
+              @include block;
+              font-family: MicrosoftYaHei Regular;
+              font-size: 12px;
+              font-weight: 300;
+              line-height: 20px;
+              letter-spacing: 0.4px;
+              color: #1c1c1c;
+              float: right;
+              margin-right: 3px;
+              text-align: right;
+            }
+          }
+        }
+      }
+      .chinesebook_classify {
+        width: inherit;
+        height: auto;
+        .chinesebook_classify_title {
+          @include block;
+          width: 280px;
+          height: 40px;
+          @include sprite($title-background);
+          font-family: Microsoft YaHei;
+          font-size: 18px;
+          line-height: 40px;
+          letter-spacing: 0.5px;
+          color: #ffffff;
+          text-indent: 40px;
+          margin-bottom: 0;
+        }
+        .classify_detail_title {
+          @include classifyborder;
+          height: 40px;
+          width: 280px;
+          input {
+            @include left;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-top: 13px;
+          }
+          label {
+            @include left;
+            margin-bottom: 0;
+            font-family: MicrosoftYaHei Regular;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 40px;
+            letter-spacing: 0.5px;
+            color: #595959;
+          }
+          p {
+            margin-bottom: 0;
+            float: right;
+            font-family: MicrosoftYaHei Regular;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 40px;
+            letter-spacing: 0.5px;
+            color: #ffa303;
+            margin-right: 8px;
+          }
+        }
+      }
+    }
+    .search_result {
+      @include left;
+      width: 720px;
+      height: auto;
+      margin-left: 25px;
+      padding-left: 15px;
+      .numchoise {
+        clear: right;
+        height: 36px;
+        p {
+          @include block;
+          @include left;
+          line-height: 34px;
+          width: 82px;
+          height: 19px;
+          font-family: Microsoft YaHei;
+          font-size: 18px;
+          color: #1c1c1c;
+        }
+        button {
+          @include block;
+          @include left;
+          padding: 7px;
+          margin-left: 12px;
+          background-color: #eeeeee;
+          border: solid 1px #d6d6d6;
+          font-family: Microsoft YaHei;
+          font-size: 14px;
+          color: #898989;
+          &:hover {
+            background-color: #019b8d;
+            border: none;
+            color: white;
+          }
+        }
+      }
+      .result_list {
+        margin-top: 30px;
+        width: 720px;
+        .result_card {
+          @include card_border;
+          width: inherit;
+          height: 136px;
+          margin-top: 25px;
+          input {
+            @include left;
+            margin: 6px 12px 100px 0;
+          }
+          .card_title {
+            margin-right: 0;
+            @include left;
+            width: 285px;
+            @include dot;
+            text-decoration: none;
+            cursor: pointer;
+            font-family: Microsoft YaHei;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0.5px;
+            color: #1c1c1c;
+            span {
+              color: #ffa303;
+            }
+          }
+          .card_date {
+            float: right;
+            margin-right: 320px;
+            font-family: Microsoft YaHei;
+            font-size: 14px;
+            line-height: 24px;
+            letter-spacing: 0.4px;
+            color: #1c1c1c;
+            span {
+              color: #999999;
+            }
+          }
+          .card_detail {
+            @include left;
+            @include dot;
+            clear: right;
+            margin-right: 0;
+            width: 375px;
+            font-family: Microsoft YaHei;
+            font-size: 14px;
+            line-height: 26px;
+            color: #999;
+          }
+          .card_toolbutton {
+            float: right;
+            width: 100px;
+            margin-top: 10px;
+            button {
+              outline: none;
+              text-align: left;
+              width: 100px;
+              height: 14px;
+              margin-bottom: 12px;
+              background: none;
+              border: none;
+              font-family: Microsoft YaHei;
+              font-size: 12px;
+              line-height: 14px;
+              letter-spacing: 0.4px;
+              color: #999999;
+              span {
+                @include left;
+                margin-right: 12px;
+                width: 14px !important;
+                height: 12px !important;
+              }
+            }
+            .like {
+              color: #ffa303;
+              span {
+                @include sprite($like);
+              }
+            }
+            .card_download {
+              span {
+                @include sprite($card-download);
+              }
+            }
+            .card_export {
+              span {
+                @include sprite($card-exprot);
+              }
+            }
+          }
+        }
+        nav {
+          text-align: center;
+          width: 100%;
+          margin: 20px auto;
+          a {
+            color: #a5a5a5;
+          }
+          .active {
+            a {
+              background: #05ac9d !important;
+              border-color: #05ac9d;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    width: auto;
+    min-width: 1030px;
+    height: 120px;
+    background: #017a6f;
+    .center-box {
+      padding-top: 32px;
+      p {
+        @include left;
+        text-align: center;
+        font-family: Microsoft YaHei;
+        font-size: 12px;
+        letter-spacing: 0.7px;
+        color: #ffffff;
+      }
+      .contact_info {
+        margin-top: 10px;
+        margin-left: 50px;
+      }
+      .user_info {
+        margin-left: 38px;
+        text-align: left;
+        width: 160px;
+        padding-left: 30px;
+        border-left: dotted 1px #fff;
+      }
+    }
+
+  }
+  .search_dialog {
+    width: 975px;
+    .dialog_header {
+      text-indent: 19px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      height: 50px;
+      text-align: center;
+      background-color: #019b8d;
+      font-family: MicrosoftYaHei;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 50px;
+      color: #ffffff;
+      a {
+        @include block;
+        margin-right: 22px;
+        float: right;
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+      }
+    }
+    .dialog_main {
+      overflow: auto;
+      padding: 45px 58px 60px 58px;
+      height: auto;
+      background: white;
+      & > div {
+        height: 34px;
+        clear: both;
+        margin-bottom: 20px;
+        .dropdown {
+          @include left;
+          margin-right: 14px;
+          #dialog_dropdownMenu0 {
+            width: 106px;
+          }
+          #dialog_dropdownMenu1 {
+            width: 150px;
+          }
+        }
+        input {
+          @include left;
+          text-indent: 16px;
+          width: 470px;
+          height: 34px;
+          outline: none;
+          font-family: Microsoft YaHei;
+          font-size: 16px;
+          letter-spacing: 0.5px;
+          color: #898989;
+        }
+        & > a {
+          @include left;
+          margin-left: 40px;
+          line-height: 34px;
+          @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            /* Webkit内核兼容CSS */
+            line-height: 29px;
+          }
+          user-select: none;
+          font-size: 24px;
+          text-align: center;
+          width: 34px;
+          height: 34px;
+          border-radius: 5px;
+          background-color: #019b8d;
+          color: white;
+          text-decoration: none;
+          cursor: pointer;
+          &:active {
+            background: darken(#019b8d, 10%);
+          }
+        }
+      }
+      .dialog_searchbutton {
+        width: 90px;
+        height: 35px;
+        border-radius: 4px;
+        background-color: #019b8d;
+        font-family: Microsoft YaHei;
+        font-size: 16px;
+        line-height: 1.9;
+        color: #ffffff;
+        border: none;
+        float: right;
+        margin-right: 4px;
+        &:active {
+          background: darken(#019b8d, 10%);
+        }
+      }
+    }
+  }
+  .detail_part {
+    width: auto;
+    min-width: 1030px;
+    padding-top: 58px;
+    padding-bottom: 98px;
+    height: auto;
+    overflow: auto;
+    .resemble {
+      @include left;
+      width: 235px;
+      background-color: #ffffff;
+      border: solid 1px #e3e1e1;
+      .resemble_title {
+        text-align: center;
+        width: inherit;
+        height: 47px;
+        background-color: #eeeeee;
+        border: solid 1px #e3e1e1;
+        font-family: Microsoft YaHei;
+        font-size: 16px;
+        line-height: 47px;
+        letter-spacing: 0.8px;
+        color: #1c1c1c;
+      }
+      .resemble_list {
+        padding: 12px;
+        a {
+          @include block;
+          @include dot;
+          cursor: pointer;
+          width: 210px;
+          height: 26px;
+          font-size: 14px;
+          font-family: Microsoft YaHei;
+          letter-spacing: 0.7px;
+          color: #1c1c1c;
+        }
+      }
+    }
+    .bookdetail {
+      @include left;
+      margin-left: 40px;
+      width: 750px;
+      height: auto;
+      background-color: #ffffff;
+      border: solid 1px #e3e1e1;
+      .bookdetail_title {
+        padding-left: 80px;
+        line-height: 46px;
+        text-align: center;
+        height: 52px;
+        background-color: #eeeeee;
+        border: solid 1px #dcdcdc;
+        font-family: Microsoft YaHei;
+        font-size: 22px;
+        letter-spacing: 0.7px;
+        color: #000000;
+        & > span {
+          color: #ffa303;
+        }
+        p {
+          margin-bottom: 0;
+          float: right;
+          margin-right: 20px;
+          font-size: 14px;
+          line-height: 52px;
+          letter-spacing: 0.7px;
+          color: #999999;
+          .bookdetail_title_icon {
+            @include sprite($count);
+            @include left;
+            margin-top: 20px;
+            margin-right: 5px;
+          }
+          .bookdetail_title_count {
+            color: #ffa303;
+          }
+        }
+      }
+      .bookdetail_toolbar {
+        width: inherit;
+        height: 36px;
+        button {
+          @include left;
+          width: 126px;
+          height: inherit;
+          border: none;
+          padding-right: 18px;
+          background: none;
+          font-family: Microsoft YaHei;
+          font-size: 14px;
+          color: #1c1c1c;
+          span {
+            @include left;
+            margin-left: 20px;
+            margin-top: 4px;
+          }
+          &:active {
+            background: #eee;
+          }
+        }
+        .bookdetail_toolbar_like {
+          font-family: Microsoft YaHei;
+          font-size: 14px;
+          background-color: #fcc360;
+          color: #ffffff;
+          &:active {
+            background: darken(#fcc360, 10%);
+          }
+          span {
+            @include sprite($detail_like);
+          }
+        }
+        .bookdetail_toolbar_watch {
+          span {
+            @include sprite($detail_book);
+
+          }
+        }
+        .bookdetail_toolbar_address {
+          span {
+            @include sprite($detail-address);
+          }
+        }
+        .bookdetail_toolbar_download {
+          span {
+            @include sprite($detail-download);
+          }
+        }
+      }
+      .bookdetail_list {
+        padding-left: 0;
+        li {
+          padding-left: 18px;
+          padding-right: 18px;
+          text-indent: 18px;
+          list-style-type: none;
+          line-height: 40px;
+          border-top: solid 1px #e3e1e1;
+          text-decoration: none;
+          font-family: Microsoft YaHei;
+          font-size: 14px;
+          color: #000000;
+          a {
+            text-decoration: none;
+            font-family: Microsoft YaHei;
+            font-size: 16px;
+            color: #000000;
+          }
+          .orange {
+            color: #ffa303;
+          }
+          button {
+            float: right;
+            width: 126px;
+            height: 41px;
+            border: none;
+            margin-right: 200px;
+            padding-right: 18px;
+            background: none;
+            font-family: Microsoft YaHei;
+            font-size: 14px;
+            color: #1c1c1c;
+            span {
+              @include left;
+              @include sprite($detail-map);
+              margin-left: 20px;
+              margin-top: 9px;
+            }
+            &:active {
+              background: #eee;
+            }
+          }
+        }
+      }
+    }
+  }
+  .print_title {
+    text-indent: 34px;
+    border-top: solid 4px #019b8d;
+    width: auto;
+    min-width: 1030px;
+    height: 72px;
+    overflow: auto;
+    background-color: #fff6e7;
+    font-family: Microsoft YaHei;
+    font-size: 22px;
+    line-height: 60px;
+    letter-spacing: 0.7px;
+    color: #1c1c1c;
+    .center-box {
+      height: 68px;
+      & > div {
+        font-size: 14px;
+        width: 240px;
+        height: 36px;
+        margin-top: 26px;
+        float: right;
+        line-height: 52px;
+        letter-spacing: 0.7px;
+        color: #999999;
+        span {
+          @include left;
+        }
+        .print_title_icon {
+          margin-right: -30px;
+          @include sprite($count);
+          margin-left: 25px;
+        }
+        .print_title_count {
+          margin-right: -30px;
+          line-height: 14px;
+          color: #ffa303;
+        }
+        p {
+          @include left;
+          width: 200px;
+          margin: 0;
+          line-height: 14px;
+        }
+      }
+    }
+
+  }
+  .print_toolbar {
+    .center-box {
+      padding: 0;
+      border: solid 1px #fcc360;
+      & > span {
+        @include block;
+        float: right;
+        @include sprite($toolbar-background);
+        margin-top: 9px;
+        margin-right: 15px;
+      }
+    }
+    width: auto;
+    min-width: 1030px;
+    height: 36px;
+    background: white;
+    width: inherit;
+    height: 36px;
+    button {
+      @include left;
+      width: 126px;
+      height: 34px;
+      border: none;
+      padding-right: 18px;
+      background: none;
+      font-family: Microsoft YaHei;
+      font-size: 14px;
+      color: #1c1c1c;
+      span {
+        @include left;
+        margin-left: 20px;
+        margin-top: 4px;
+      }
+      &:active {
+        background: #eee;
+      }
+    }
+    .print_toolbar_like {
+      font-family: Microsoft YaHei;
+      font-size: 14px;
+      background-color: #fcc360;
+      color: #ffffff;
+      &:active {
+        background: darken(#fcc360, 10%);
+      }
+      span {
+        @include sprite($detail_like);
+      }
+    }
+    .print_toolbar_address {
+      span {
+        @include sprite($detail-address);
+      }
+    }
+    .print_toolbar_download {
+      span {
+        @include sprite($detail-download);
+      }
+    }
+  }
+  .print_main {
+    overflow: auto;
+    clear: both;
+    //padding-top: 1px;
+    width: auto;
+    min-width: 1030px;
+    height: auto;
+    .print_win {
+      @include left;
+      width: 750px;
+      height: 920px;
+      background-image: url(../images/print.png);
+      margin-bottom: 77px;
+    }
+    .normal_info {
+      @include left;
+      margin-left: 22px;
+      width: 258px;
+      border: solid 1px #fcc360;
+      padding-bottom: 15px;
+      .normal_info_title {
+        text-indent: 12px;
+        width: 256px;
+        height: 47px;
+        background-color: #fff6e7;
+        border-bottom: solid 1px #fcc360;
+        font-family: Microsoft YaHei;
+        font-size: 16px;
+        line-height: 47px;
+        letter-spacing: 0.8px;
+        color: #1c1c1c;
+        margin-bottom: 15px;
+      }
+      p {
+        text-indent: 12px;
+        font-family: Microsoft YaHei;
+        font-size: 16px;
+        line-height: 1.6;
+        letter-spacing: 0.8px;
+        color: #1c1c1c;
+      }
+    }
+    .resemble {
+      @include left;
+      margin-top: 17px;
+      margin-left: 22px;
+      width: 258px;
+      background-color: #ffffff;
+      border: solid 1px #fcc360;
+      padding-bottom: 15px;
+      .resemble_title {
+        text-indent: 12px;
+        width: 256px;
+        height: 47px;
+        background-color: #fff6e7;
+        border-bottom: solid 1px #fcc360;
+        text-align: center;
+        background-color: #fff6e7;
+        border-bottom: solid 1px #fcc360;
+        font-family: Microsoft YaHei;
+        font-size: 16px;
+        line-height: 47px;
+        letter-spacing: 0.8px;
+        color: #1c1c1c;
+        margin-bottom: 15px;
+      }
+      .resemble_list {
+        a {
+          text-indent: 12px;
+          @include block;
+          @include dot;
+          font-family: Microsoft YaHei;
+          font-size: 16px;
+          line-height: 1.6;
+          letter-spacing: 0.8px;
+          color: #1c1c1c;
+          cursor: pointer;
+
+        }
+      }
+    }
+  }
+  .classify_reader {
+    overflow-y: auto;
+    overflow-x: hidden;
+    clear: both;
+    padding-top: 18px;
+    width: auto;
+    min-width: 1030px;
+    height: auto;
+    .classify_reader_title {
+      width: 1024px;
+      height: 40px;
+      background-color: #eeeeee;
+      .classify_reader_name {
+        @include left;
+        text-align: center;
+        width: 220px;
+        height: 40px;
+        background-color: #019b8d;
+        font-family: Microsoft YaHei;
+        font-size: 24px;
+        line-height: 40px;
+        letter-spacing: 2.4px;
+        color: #ffffff;
+      }
+      .up_down {
+        float: right;
+        border: none;
+        width: 82px;
+        height: 40px;
+        background-color: #c9c7c7;
+        font-family: Microsoft YaHei;
+        font-size: 18px;
+        line-height: 36px;
+        letter-spacing: 1.8px;
+        color: #fff;
+        .classify_up {
+          @include left;
+          @include sprite($title-up);
+          margin-left: 4px;
+          margin-top: 11px;
+        }
+        &:active {
+          background-color: darken(#c9c7c7, 10%);
+        }
+      }
+    }
+    .classify_reader_content {
+      position: relative;
+      padding: 26px 28px;
+      margin-top: 16px;
+      width: 1024px;
+      height: auto;
+      overflow-x: hidden;
+      overflow-y: auto;
+      background: white;
+      border: solid 1px #e3e1e1;
+    }
+    .card_reader {
+      .card_reader_num {
+        width: 968px;
+        height: 44px;
+        border-collapse: collapse;
+        border: solid 1px #e3e1e1;
+        th {
+          text-indent: 37px;
+          text-align: left;
+          border: solid 1px #e3e1e1;
+          width: 350px;
+          font-family: Microsoft YaHei;
+          font-size: 20px;
+          line-height: 28px;
+          letter-spacing: 2px;
+          color: #1c1c1c;
+          span {
+            @include block;
+            margin-right: 15px;
+            float: right;
+            font-size: 22px;
+            line-height: 30px;
+            letter-spacing: 2.2px;
+            color: #019b8d;
+          }
+        }
+        .detail_button {
+          text-indent: 0;
+          text-align: center;
+          width: 250px;
+          button {
+            border: none;
+            width: 82px;
+            height: 28px;
+            border-radius: 5px;
+            background-color: #ffa303;
+            color: #fff;
+            line-height: 16px;
+            &:active {
+              background-color: darken(#ffa303, 10%);
+            }
+          }
+        }
+      }
+      .reader_lib {
+        margin-top: 14px;
+        margin-bottom: 40px;
+        width: 968px;
+        height: 95px;
+        border-collapse: collapse;
+        border: solid 1px #e3e1e1;
+        th {
+          font-family: Microsoft YaHei;
+          font-size: 18px;
+          line-height: 2.1;
+          letter-spacing: 1.8px;
+          text-align: center;
+          color: #1c1c1c;
+          border: solid 1px #e3e1e1;
+          width: 350px;
+          span {
+            font-size: 22px;
+            line-height: 1.7;
+            letter-spacing: 2.2px;
+            color: #019b8d;
+            margin-right: 15px;
+          }
+          .today_count {
+            color: #ffa303;;
+          }
+        }
+        .detail_button {
+          text-indent: 0;
+          text-align: center;
+          width: 250px;
+          button {
+            border: none;
+            width: 82px;
+            height: 28px;
+            border-radius: 5px;
+            background-color: #ffa303;
+            color: #fff;
+            line-height: 16px;
+            &:active {
+              background-color: darken(#ffa303, 10%);
+            }
+          }
+        }
+      }
+      .reader_num {
+        border-top: dashed 1px #e3e1e1;
+        padding-top: 40px;
+        width: 968px;
+        height: 462px;
+        #today_lib_chart {
+          @include left;
+          width: 780px;
+          height: 330px;
+        }
+        button {
+          @include left;
+          border: none;
+          margin-top: 20px;
+          margin-left: 60px;
+          width: 46px;
+          height: 28px;
+          border-radius: 5px;
+          background-color: #e3e1e1;
+          font-family: Microsoft YaHei;
+          font-size: 16px;
+          line-height: 23px;
+          letter-spacing: 2px;
+          color: #1c1c1c;
+          &:active {
+            background: #ffa303;
+            color: white;
+          }
+        }
+        .reader_num_detail {
+          margin-top: 120px;
+          margin-left: 43px;
+          width: 82px;
+          height: 28px;
+          border-radius: 5px;
+          background-color: #ffa303;
+          font-family: Microsoft YaHei;
+          font-size: 16px;
+          line-height: 23px;
+          letter-spacing: 2px;
+          color: white;
+          &:active {
+            background-color: darken(#ffa303, 10%);
+          }
+        }
+      }
+    }
+    .web_reader {
+      margin-top: 82px;
+      .register_reader {
+        height: 100px;
+        p {
+          margin: 0;
+          @include left;
+          font-family: Microsoft YaHei;
+          font-size: 20px;
+          line-height: 30px;
+          letter-spacing: 2px;
+        }
+        .register_classify {
+          color: #1c1c1c;
+        }
+        .register_num {
+          color: #6ea1f5;
+        }
+        & > div {
+          @include left;
+          width: 470px;
+          height: 30px;
+          .progress {
+            @include left;
+            width: 109px;
+            height: 24px;
+            margin: 4px 20px 0 20px;
+            .progress-bar {
+              font-family: Microsoft YaHei;
+              letter-spacing: 1.6px;
+              min-width: 20px;
+              line-height: 24px;
+            }
+          }
+        }
+        .register_num_detail {
+          float: right;
+          border: none;
+          margin-top: 20px;
+          margin-left: 43px;
+          width: 82px;
+          height: 28px;
+          border-radius: 5px;
+          background-color: #ffa303;
+          font-family: Microsoft YaHei;
+          font-size: 16px;
+          line-height: 23px;
+          letter-spacing: 2px;
+          color: white;
+          &:active {
+            background-color: darken(#ffa303, 10%);
+          }
+        }
+      }
+      .reader_web {
+        margin-top: 14px;
+        margin-bottom: 40px;
+        width: 968px;
+        height: 95px;
+        border-collapse: collapse;
+        border: solid 1px #e3e1e1;
+        th {
+          font-family: Microsoft YaHei;
+          font-size: 18px;
+          line-height: 2.1;
+          letter-spacing: 1.8px;
+          text-align: center;
+          color: #1c1c1c;
+          border: solid 1px #e3e1e1;
+          width: 192px;
+          span {
+            font-size: 22px;
+            line-height: 1.7;
+            letter-spacing: 2.2px;
+            color: #019b8d;
+            margin-right: 15px;
+          }
+          .now_count {
+            color: #ffa303;;
+          }
+        }
+        .detail_button {
+          text-indent: 0;
+          text-align: center;
+          width: 250px;
+          button {
+            border: none;
+            width: 82px;
+            height: 28px;
+            border-radius: 5px;
+            background-color: #ffa303;
+            color: #fff;
+            line-height: 16px;
+            &:active {
+              background-color: darken(#ffa303, 10%);
+            }
+          }
+        }
+      }
+      .reader_num {
+        border-top: dashed 1px #e3e1e1;
+        padding-top: 40px;
+        width: 968px;
+        height: 462px;
+        #today_web_chart {
+          @include left;
+          width: 780px;
+          height: 330px;
+        }
+        button {
+          @include left;
+          border: none;
+          margin-top: 20px;
+          margin-left: 60px;
+          width: 46px;
+          height: 28px;
+          border-radius: 5px;
+          background-color: #e3e1e1;
+          font-family: Microsoft YaHei;
+          font-size: 16px;
+          line-height: 23px;
+          letter-spacing: 2px;
+          color: #1c1c1c;
+          &:active {
+            background: #ffa303;
+            color: white;
+          }
+        }
+        .reader_num_detail {
+          margin-top: 120px;
+          margin-left: 43px;
+          width: 82px;
+          height: 28px;
+          border-radius: 5px;
+          background-color: #ffa303;
+          font-family: Microsoft YaHei;
+          font-size: 16px;
+          line-height: 23px;
+          letter-spacing: 2px;
+          color: white;
+          &:active {
+            background-color: darken(#ffa303, 10%);
+          }
+        }
+      }
+    }
+    .nice_reader {
+      margin-bottom: 98px;
+      margin-top: 82px;
+      .rank_tool {
+        overflow-y: auto;
+        margin-top: 26px;
+        margin-bottom: 53px;
+        button {
+          @include left;
+          font-family: Microsoft YaHei;
+          font-size: 14px;
+          letter-spacing: 1.4px;
+          color: #ffffff;
+          width: 109px;
+          height: 32px;
+          border: none;
+        }
+        .group_rank {
+          background-color: #fc586b;
+        }
+        .group_rank_chosing {
+          padding-bottom: 8px;
+          background-color: transparent;
+          height: 38px;
+          @include sprite($group-ranking-button);
+        }
+        .person_rank {
+          margin-left: 16px;
+          background-color: #03b5ff;
+        }
+        .person_rank_chosing {
+          padding-bottom: 8px;
+          background-color: transparent;
+          height: 38px;
+          @include sprite($person-ranking-button);
+        }
+        .time_line {
+          & > span {
+            margin-top: 5px;
+            margin-left: 8px;
+            @include left;
+          }
+          .begging_time {
+            margin-left: 25px;
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+          .ending_time {
+            margin-left: 25px;
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+        }
+        .statistics {
+          width: 127px;
+          height: 32px;
+          background-color: #019b8d;
+          &:active {
+            background-color: darken(#03b5ff, 10%);
+          }
+        }
+      }
+      table {
+        width: 968px;
+        height: 500px;
+        th, td {
+          text-align: center;
+          @include dot;
+          font-family: Microsoft YaHei;
+          font-size: 18px;
+          letter-spacing: 1.8px;
+          color: #1c1c1c;
+        }
+        td {
+          max-width: 100px;
+        }
+        span {
+          line-height: 20px;
+          text-indent: 2px;
+          margin-left: 14px;
+          color: white;
+          @include block;
+        }
+        .first {
+          @include sprite($rank-first);
+        }
+        .second {
+          @include sprite($rank-second);
+        }
+        .third {
+          @include sprite($rank-third);
+        }
+      }
+      .person_ranking_list {
+        td {
+          max-width: 160px;
+        }
+        span {
+          @include block;
+          line-height: 20px;
+          text-indent: 2px;
+          margin-left: 46px;
+          margin-right: 0;
+          color: white;
+        }
+      }
+    }
+  }
+  .back_button {
+    overflow-y: auto;
+    overflow-x: hidden;
+    clear: both;
+    width: auto;
+    min-width: 1030px;
+    height: auto;
+    button {
+      margin: 28px 0;
+      border: none;
+      @include sprite($back-button);
+    }
+  }
+  .history_card_reader {
+    overflow-y: auto;
+    overflow-x: hidden;
+    clear: both;
+    width: auto;
+    min-width: 1030px;
+    height: auto;
+    .history_card_reader_title {
+      width: 1024px;
+      margin: 0;
+      margin-bottom: 16px;
+      height: 40px;
+      background-color: #ffa303;
+      font-family: Microsoft YaHei;
+      font-size: 24px;
+      line-height: 40px;
+      text-indent: 44px;
+      letter-spacing: 2.4px;
+      color: #ffffff;
+    }
+    .history_card_reader_content {
+      width: 1024px;
+      height: auto;
+      overflow: auto;
+      border: solid 1px #e3e1e1;
+      padding: 24px 28px 0;
+      .statistics_classify {
+        select {
+          @include left;
+        }
+        .reader_classify {
+          width: 127px;
+          height: 32px;
+        }
+        .year_mouth {
+          margin-left: 46px;
+          width: 93px;
+          height: 32px;
+        }
+        .time_line_year {
+          & > span {
+            margin-top: 5px;
+            margin-left: 8px;
+            @include left;
+          }
+          .begging_time {
+            margin-left: 25px;
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+          .ending_time {
+            margin-left: 25px;
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+        }
+        .time_line_mouth {
+          display: none;
+          & > span {
+            margin-top: 5px;
+            margin-left: 8px;
+            @include left;
+          }
+          .begging_time {
+            margin-left: 25px;
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+          .ending_time {
+            margin-left: 25px;
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+        }
+        .statistics {
+          margin-left: 200px;
+          border: none;
+          width: 127px;
+          height: 32px;
+          background-color: #019b8d;
+          font-family: Microsoft YaHei;
+          font-size: 14px;
+          letter-spacing: 0.8px;
+          color: #ffffff;
+          &:active {
+            background-color: darken(#03b5ff, 10%);
+          }
+        }
+      }
+      table {
+        margin-top: 40px;
+        width: 968px;
+        height: 310px;
+      }
+      .history_card_reader_mouth_list {
+        display: none;
+        th, td {
+          @include dot;
+          text-align: center;
+          font-family: Microsoft YaHei;
+          max-width: 70px;
+          letter-spacing: 1.1px;
+          color: #1c1c1c;
+        }
+        th {
+          font-size: 18px;
+        }
+        td {
+          font-size: 16px;
+        }
+        .mouth_count {
+          color: #ffa303;
+        }
+      }
+      .history_card_reader_year_list {
+        th, td {
+          @include dot;
+          text-align: center;
+          font-family: Microsoft YaHei;
+          max-width: 90px;
+          letter-spacing: 1.1px;
+          color: #1c1c1c;
+        }
+        th {
+          font-size: 18px;
+        }
+        td {
+          font-size: 16px;
+        }
+        .year_count {
+          color: #ffa303;
+        }
+      }
+      #history_card_reader_chart {
+        @include left;
+        margin-bottom: 64px;
+        margin-top: 58px;
+        width: 968px;
+        height: 330px;
+      }
+    }
+  }
+  .today_card_reader {
+    margin-bottom: 98px;
+    margin-top: 82px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    clear: both;
+    width: auto;
+    min-width: 1030px;
+    height: auto;
+    .today_card_reader_title {
+      width: 1024px;
+      margin: 0;
+      margin-bottom: 16px;
+      height: 40px;
+      background-color: #ffa303;
+      font-family: Microsoft YaHei;
+      font-size: 24px;
+      line-height: 40px;
+      text-indent: 44px;
+      letter-spacing: 2.4px;
+      color: #ffffff;
+    }
+    .today_card_reader_content {
+      width: 1024px;
+      height: auto;
+      overflow-y: auto;
+      border: solid 1px #e3e1e1;
+      padding: 24px 28px 68px;
+      .group_block {
+        border: solid 1px #e3e1e1;
+        overflow: hidden;
+        width: 968px;
+        height: 433px;
+        p {
+          margin-bottom: 0;
+        }
+        .group_block_title {
+          text-indent: 17px;
+          line-height: 49px;
+          width: 966px;
+          height: 49px;
+          background-color: #e3e1e1;
+          font-family: Microsoft YaHei;
+          font-size: 20px;
+          letter-spacing: 2px;
+          color: #1c1c1c;
+        }
+        .group_block_subtitle {
+          text-indent: 17px;
+          width: 966px;
+          height: 49px;
+          background-color: #eeeeee;
+          font-family: Microsoft YaHei;
+          font-size: 20px;
+          line-height: 49px;
+          letter-spacing: 2px;
+          color: #1c1c1c;
+          span {
+            @include left;
+            @include dot;
+            max-width: 250px;
+            margin-right: 60px;
+          }
+        }
+        .group_block_table {
+          height: 334px !important;
+          overflow-x: hidden;
+          overflow-y: scroll;
+          table {
+            width: 100%;
+            tbody {
+              width: 968px;
+            }
+            th, td {
+              @include dot;
+              width: 310px;
+              max-width: 320px;
+              height: 36px;
+              text-align: center;
+              font-family: Microsoft YaHei;
+              font-size: 18px;
+              letter-spacing: 1.8px;
+              color: #1c1c1c;
+            }
+            .card_num {
+              color: #ffa303;
+            }
+          }
+        }
+
+      }
+    }
+  }
+  .lib_reader {
+    overflow-y: auto;
+    overflow-x: hidden;
+    clear: both;
+    width: auto;
+    min-width: 1030px;
+    height: auto;
+    .lib_reader_title {
+      width: 1024px;
+      margin: 0;
+      margin-bottom: 16px;
+      height: 40px;
+      background-color: #ffa303;
+      font-family: Microsoft YaHei;
+      font-size: 24px;
+      line-height: 40px;
+      text-indent: 44px;
+      letter-spacing: 2.4px;
+      color: #ffffff;
+    }
+    .lib_reader_content {
+      margin-bottom: 98px;
+      width: 1024px;
+      height: auto;
+      overflow: auto;
+      border: solid 1px #e3e1e1;
+      padding: 24px 28px 0;
+      .statistics_classify {
+        select {
+          @include left;
+        }
+        .reader_classify {
+          width: 127px;
+          height: 32px;
+        }
+        .year_mouth_day {
+          width: 93px;
+          height: 32px;
+        }
+        .time_line_year {
+          & > span {
+            margin-top: 5px;
+            margin-left: 8px;
+            @include left;
+          }
+          .begging_time {
+            margin-left: 25px;
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+          .ending_time {
+            margin-left: 25px;
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+        }
+        .time_line_mouth {
+          display: none;
+          & > span {
+            margin-top: 5px;
+            margin-left: 8px;
+            @include left;
+          }
+          .begging_time {
+            margin-left: 25px;
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+          .ending_time {
+            margin-left: 25px;
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+        }
+        .time_line_day {
+          display: none;
+          & > span {
+            margin-top: 5px;
+            margin-left: 8px;
+            @include left;
+          }
+          .begging_time {
+            margin-left: 25px;
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+          .ending_time {
+            margin-left: 25px;
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+        }
+
+        .statistics {
+          margin-left: 300px;
+          border: none;
+          width: 127px;
+          height: 32px;
+          background-color: #019b8d;
+          font-family: Microsoft YaHei;
+          font-size: 14px;
+          letter-spacing: 0.8px;
+          color: #ffffff;
+          &:active {
+            background-color: darken(#03b5ff, 10%);
+          }
+        }
+      }
+      table {
+        margin-top: 40px;
+        width: 968px;
+        height: 88px;
+      }
+      .lib_reader_year_list {
+        th, td {
+          @include dot;
+          text-align: center;
+          font-family: Microsoft YaHei;
+          max-width: 90px;
+          letter-spacing: 1.1px;
+          color: #1c1c1c;
+        }
+        th {
+          font-size: 18px;
+        }
+        td {
+          font-size: 16px;
+        }
+        .year_count {
+          color: #ffa303;
+        }
+      }
+      #lib_reader_chart {
+        @include left;
+        margin-bottom: 64px;
+        margin-top: 58px;
+        width: 968px;
+        height: 330px;
+      }
+    }
+  }
+  .info_proportion {
+    margin-top: 18px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    clear: both;
+    width: auto;
+    min-width: 1030px;
+    height: auto;
+    .info_proportion_title {
+      width: 1030px;
+      height: 40px;
+      background-color: #eeeeee;
+      .info_proportion_name {
+        @include left;
+        text-align: center;
+        width: 378px;
+        height: 40px;
+        background-color: #019b8d;
+        font-family: Microsoft YaHei;
+        font-size: 24px;
+        line-height: 40px;
+        letter-spacing: 2.4px;
+        color: #ffffff;
+      }
+      .up_down {
+        float: right;
+        border: none;
+        width: 82px;
+        height: 40px;
+        background-color: #c9c7c7;
+        font-family: Microsoft YaHei;
+        font-size: 18px;
+        line-height: 36px;
+        letter-spacing: 1.8px;
+        color: #fff;
+        .classify_up {
+          @include left;
+          @include sprite($title-up);
+          margin-left: 4px;
+          margin-top: 11px;
+        }
+        &:active {
+          background-color: darken(#c9c7c7, 10%);
+        }
+      }
+    }
+    .info_proportion_content {
+      overflow-x: hidden;
+      overflow-y: auto;
+      padding: 30px 10px 60px;
+      border: solid 1px #e3e1e1;
+      .time_choise {
+        margin-left: 135px;
+        & > span {
+          margin-top: 5px;
+          margin-left: 8px;
+          @include left;
+        }
+        .begging_time {
+          margin-left: 25px;
+          @include left;
+          input {
+            text-align: center;
+            height: 32px;
+            width: 90px;
+          }
+        }
+        .ending_time {
+          margin-left: 25px;
+          @include left;
+          input {
+            text-align: center;
+            height: 32px;
+            width: 90px;
+          }
+        }
+      }
+      .time_choise_button {
+        border: none;
+        margin-left: 120px;
+        width: 127px;
+        height: 32px;
+        line-height: 26px;
+        background-color: #019b8d;
+        font-family: Microsoft YaHei;
+        font-size: 14px;
+        letter-spacing: 0.8px;
+        color: #ffffff;
+        &:active {
+          background-color: darken(#019b8d, 10%);
+        }
+      }
+      #access_num_chart {
+        @include left;
+        margin-top: 30px;
+        clear: left;
+        width: 50%;
+        height: 280px;
+      }
+      #info_percentage_chart {
+        @include left;
+        margin-top: 30px;
+        width: 50%;
+        height: 280px;
+      }
+    }
+  }
+  .book_circulation {
+    margin-top: 82px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    clear: both;
+    width: auto;
+    min-width: 1030px;
+    height: auto;
+    .book_circulation_title {
+      font-family: Microsoft YaHei;
+      font-size: 20px;
+      line-height: 40px;
+      letter-spacing: 2px;
+      color: #ffa303;
+      width: 1030px;
+      height: 40px;
+      background-color: #eeeeee;
+      .book_circulation_name {
+        @include left;
+        text-align: center;
+        width: 220px;
+        height: 40px;
+        background-color: #019b8d;
+        font-family: Microsoft YaHei;
+        font-size: 24px;
+        line-height: 40px;
+        letter-spacing: 2.4px;
+        color: #ffffff;
+      }
+      .up_down {
+        float: right;
+        border: none;
+        width: 82px;
+        height: 40px;
+        background-color: #c9c7c7;
+        font-family: Microsoft YaHei;
+        font-size: 18px;
+        line-height: 36px;
+        letter-spacing: 1.8px;
+        color: #fff;
+        .classify_up {
+          @include left;
+          @include sprite($title-up);
+          margin-left: 4px;
+          margin-top: 11px;
+        }
+        &:active {
+          background-color: darken(#c9c7c7, 10%);
+        }
+      }
+    }
+    .book_circulation_content {
+      .return_book {
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 30px 10px 60px;
+        border: solid 1px #e3e1e1;
+        border-bottom: none;
+        .book_circulation_subtitle {
+          padding-top: 17px;
+          margin-bottom: 38px;
+          margin-left: 18px;
+          border: none;
+          font-family: Microsoft YaHei;
+          font-size: 24px;
+          letter-spacing: 2.4px;
+          color: #1c1c1c;
+        }
+        .time_choise {
+          overflow: auto;
+          width: 100%;
+          margin-left: 14px;
+          & > span {
+            margin-top: 5px;
+            margin-left: 8px;
+            @include left;
+          }
+          .begging_time {
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+          .ending_time {
+            margin-left: 25px;
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+
+          select {
+            @include left;
+          }
+          .reader_classify {
+            width: 127px;
+            height: 32px;
+          }
+          .year_mouth_day {
+            width: 93px;
+            height: 32px;
+          }
+          .time_line_year {
+            float: left;
+            overflow: auto;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_line_mouth {
+            float: left;
+
+            overflow: auto;
+            display: none;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_line_day {
+            float: left;
+
+            overflow: auto;
+            display: none;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_choise_button {
+            @include left;
+            margin-left: 200px;
+            border: none;
+            width: 127px;
+            height: 32px;
+            line-height: 26px;
+            background-color: #019b8d;
+            font-family: Microsoft YaHei;
+            font-size: 14px;
+            letter-spacing: 0.8px;
+            color: #ffffff;
+            &:active {
+              background-color: darken(#019b8d, 10%);
+            }
+          }
+
+        }
+        .return_book_list_year {
+          margin-top: 40px;
+          width: 968px;
+          height: 125px;
+          th {
+            background-color: #f3f3f3;
+          }
+          th, td {
+            width: 120px;
+            max-width: 135px;
+            @include dot;
+            text-align: center;
+            font-family: Microsoft YaHei;
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: #1c1c1c;
+          }
+          .orange {
+            color: #ffa303;
+          }
+        }
+        .return_book_list_month {
+          display: none;
+          margin-top: 40px;
+          width: 968px;
+          height: 180px;
+          th {
+            background-color: #f3f3f3;
+          }
+          th, td {
+            width: 120px;
+            max-width: 135px;
+            @include dot;
+            text-align: center;
+            font-family: Microsoft YaHei;
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: #1c1c1c;
+          }
+          .orange {
+            color: #ffa303;
+          }
+        }
+        .return_book_list_day {
+          display: none;
+          margin-top: 40px;
+          width: 968px;
+          height: 180px;
+          th {
+            background-color: #f3f3f3;
+          }
+          th, td {
+            width: 120px;
+            max-width: 135px;
+            @include dot;
+            text-align: center;
+            font-family: Microsoft YaHei;
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: #1c1c1c;
+          }
+          .orange {
+            color: #ffa303;
+          }
+        }
+
+        #return_book_charts {
+          margin-top: 56px;
+          width: 100%;
+          height: 400px;
+        }
+      }
+      .group_return_book {
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 30px 28px 60px;
+        border: solid 1px #e3e1e1;
+        border-top: none;
+        .book_circulation_subtitle {
+          margin-bottom: 38px;
+          padding-top: 44px;
+          border: none;
+          border-top: dashed 1px #e3e1e1;
+          font-family: Microsoft YaHei;
+          font-size: 24px;
+          letter-spacing: 2.4px;
+          color: #1c1c1c;
+        }
+        .time_choise {
+          overflow: auto;
+          width: 100%;
+          margin-left: 14px;
+          & > span {
+            margin-top: 5px;
+            margin-left: 8px;
+            @include left;
+          }
+          .begging_time {
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+          .ending_time {
+            margin-left: 25px;
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+
+          select {
+            @include left;
+          }
+          .reader_classify {
+            width: 127px;
+            height: 32px;
+          }
+          .year_mouth_day {
+            width: 93px;
+            height: 32px;
+          }
+          .time_line_year {
+            float: left;
+            overflow: auto;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_line_mouth {
+            float: left;
+
+            overflow: auto;
+            display: none;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_line_day {
+            float: left;
+
+            overflow: auto;
+            display: none;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_choise_button {
+            @include left;
+            margin-left: 200px;
+            border: none;
+            width: 127px;
+            height: 32px;
+            line-height: 26px;
+            background-color: #019b8d;
+            font-family: Microsoft YaHei;
+            font-size: 14px;
+            letter-spacing: 0.8px;
+            color: #ffffff;
+            &:active {
+              background-color: darken(#019b8d, 10%);
+            }
+          }
+
+        }
+        .group_return_book_list_year {
+          margin-top: 40px;
+          width: 968px;
+          height: 397px;
+          th {
+            background-color: #f3f3f3;
+          }
+          th, td {
+            width: 100px;
+            max-width: 115px;
+            @include dot;
+            text-align: center;
+            font-family: Microsoft YaHei;
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: #1c1c1c;
+          }
+          .orange {
+            color: #ffa303;
+          }
+        }
+        .group_return_book_list_month {
+          display: none;
+          margin-top: 40px;
+          width: 968px;
+          height: 397px;
+          th {
+            background-color: #f3f3f3;
+          }
+          th, td {
+            width: 100px;
+            max-width: 115px;
+            @include dot;
+            text-align: center;
+            font-family: Microsoft YaHei;
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: #1c1c1c;
+          }
+          .orange {
+            color: #ffa303;
+          }
+        }
+        .group_return_book_list_day {
+          display: none;
+          margin-top: 40px;
+          width: 968px;
+          height: 397px;
+          th {
+            background-color: #f3f3f3;
+          }
+          th, td {
+            width: 100px;
+            max-width: 115px;
+            @include dot;
+            text-align: center;
+            font-family: Microsoft YaHei;
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: #1c1c1c;
+          }
+          .orange {
+            color: #ffa303;
+          }
+        }
+
+      }
+      .hot_book {
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 30px 28px 60px;
+        border: solid 1px #e3e1e1;
+        border-top: none;
+        .book_circulation_subtitle {
+          margin-bottom: 38px;
+          padding-top: 44px;
+          border: none;
+          border-top: dashed 1px #e3e1e1;
+          font-family: Microsoft YaHei;
+          font-size: 24px;
+          letter-spacing: 2.4px;
+          color: #1c1c1c;
+        }
+        .time_choise {
+          overflow: auto;
+          width: 100%;
+          margin-left: 14px;
+          & > span {
+            margin-top: 5px;
+            margin-left: 8px;
+            @include left;
+          }
+          .begging_time {
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+          .ending_time {
+            margin-left: 25px;
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+
+          select {
+            @include left;
+          }
+          .reader_classify {
+            width: 127px;
+            height: 32px;
+          }
+          .year_mouth_day {
+            width: 93px;
+            height: 32px;
+          }
+          .time_line_year {
+            float: left;
+            overflow: auto;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_line_mouth {
+            float: left;
+
+            overflow: auto;
+            display: none;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_line_day {
+            float: left;
+
+            overflow: auto;
+            display: none;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_choise_button {
+            @include left;
+            margin-left: 200px;
+            border: none;
+            width: 127px;
+            height: 32px;
+            line-height: 26px;
+            background-color: #019b8d;
+            font-family: Microsoft YaHei;
+            font-size: 14px;
+            letter-spacing: 0.8px;
+            color: #ffffff;
+            &:active {
+              background-color: darken(#019b8d, 10%);
+            }
+          }
+
+        }
+        .hot_book_list {
+          margin-bottom: 10px;
+          margin-top: 40px;
+          width: 968px;
+          height: 397px;
+          th, td {
+            width: 140px;
+            max-width: 150px;
+            @include dot;
+            text-align: center;
+            font-family: Microsoft YaHei;
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: #1c1c1c;
+            .rent_count{
+              letter-spacing: 1.2px;
+              text-align: center;
+              color: #999999;
+              font-size: 12px;
+            }
+            .first{
+              color: white;
+              margin: auto;
+              @include block;
+              @include sprite($rank-first);
+            }
+            .second{
+              color: white;
+              margin: auto;
+              @include block;
+              @include sprite($rank-second);
+            }
+            .third{
+              color: white;
+              margin: auto;
+              @include block;
+              @include sprite($rank-third);
+            }
+          }
+          .orange {
+            color: #ffa303;
+          }
+        }
+      }
+    }
+  }
+  .digit_info{
+    margin-top: 82px;
+    clear: both;
+    width: auto;
+    min-width: 1030px;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    .digit_info_title {
+      font-family: Microsoft YaHei;
+      font-size: 20px;
+      line-height: 40px;
+      letter-spacing: 2px;
+      color: #ffa303;
+      width: 1030px;
+      height: 40px;
+      background-color: #eeeeee;
+      .digit_info_name {
+        @include left;
+        text-align: center;
+        width: 220px;
+        height: 40px;
+        background-color: #019b8d;
+        font-family: Microsoft YaHei;
+        font-size: 24px;
+        line-height: 40px;
+        letter-spacing: 2.4px;
+        color: #ffffff;
+      }
+      .up_down {
+        float: right;
+        border: none;
+        width: 82px;
+        height: 40px;
+        background-color: #c9c7c7;
+        font-family: Microsoft YaHei;
+        font-size: 18px;
+        line-height: 36px;
+        letter-spacing: 1.8px;
+        color: #fff;
+        .classify_up {
+          @include left;
+          @include sprite($title-up);
+          margin-left: 4px;
+          margin-top: 11px;
+        }
+        &:active {
+          background-color: darken(#c9c7c7, 10%);
+        }
+      }
+    }
+    .digit_info_content{
+      border-bottom: solid 1px #e3e1e1;
+      .resource_apply{
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 30px 28px 60px;
+        border-left: solid 1px #e3e1e1;
+        border-right: solid 1px #e3e1e1;
+        border-top: none;
+        .digit_info_subtitle {
+          margin-bottom: 38px;
+          padding-top: 9px;
+          border: none;
+          font-family: Microsoft YaHei;
+          font-size: 24px;
+          letter-spacing: 2.4px;
+          color: #1c1c1c;
+        }
+        .time_choise {
+          overflow: auto;
+          width: 100%;
+          margin-left: 14px;
+          & > span {
+            margin-top: 5px;
+            margin-left: 8px;
+            @include left;
+          }
+          .begging_time {
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+          .ending_time {
+            margin-left: 25px;
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+
+          select {
+            @include left;
+          }
+          .reader_classify {
+            width: 127px;
+            height: 32px;
+          }
+          .year_mouth_day {
+            width: 93px;
+            height: 32px;
+          }
+          .time_line_year {
+            float: left;
+            overflow: auto;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_line_mouth {
+            float: left;
+
+            overflow: auto;
+            display: none;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_line_day {
+            float: left;
+
+            overflow: auto;
+            display: none;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_choise_button {
+            @include left;
+            margin-left: 200px;
+            border: none;
+            width: 127px;
+            height: 32px;
+            line-height: 26px;
+            background-color: #019b8d;
+            font-family: Microsoft YaHei;
+            font-size: 14px;
+            letter-spacing: 0.8px;
+            color: #ffffff;
+            &:active {
+              background-color: darken(#019b8d, 10%);
+            }
+          }
+
+        }
+        .resource_apply_list{
+          margin-top: 42px;
+          width: 968px;
+          height: 434px;
+          th{
+            background-color: #f0efef;
+          }
+          th, td {
+            width: 60px;
+            max-width: 75px;
+            @include dot;
+            text-align: center;
+            font-family: Microsoft YaHei;
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: #1c1c1c;
+            .rent_count{
+              letter-spacing: 1.2px;
+              text-align: center;
+              color: #999999;
+              font-size: 12px;
+            }
+            .first{
+              color: white;
+              margin: auto;
+              @include block;
+              @include sprite($rank-first);
+            }
+            .second{
+              color: white;
+              margin: auto;
+              @include block;
+              @include sprite($rank-second);
+            }
+            .third{
+              color: white;
+              margin: auto;
+              @include block;
+              @include sprite($rank-third);
+            }
+          }
+          .orange {
+            color: #ffa303;
+          }
+        }
+        .chose_storge{
+          width: 93px;
+          height: 32px;
+          margin-top: 30px;
+          margin-left: 100px;
+        }
+        #resource_apply_chart{
+          width: 100%;
+          height: 400px;
+        }
+      }
+      .group_resource_apply{
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 0px 28px 60px;
+        border: solid 1px #e3e1e1;
+        border-top: none;
+        border-bottom: none!important;
+        .digit_info_subtitle {
+          margin-bottom: 38px;
+          padding-top: 40px;
+          border: none;
+          border-top: dashed 1px #e3e1e1;
+          font-family: Microsoft YaHei;
+          font-size: 24px;
+          letter-spacing: 2.4px;
+          color: #1c1c1c;
+        }
+        .time_choise {
+          overflow: auto;
+          width: 100%;
+          margin-left: 14px;
+          & > span {
+            margin-top: 5px;
+            margin-left: 8px;
+            @include left;
+          }
+          .begging_time {
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+          .ending_time {
+            margin-left: 25px;
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+
+          select {
+            @include left;
+          }
+          .reader_classify {
+            width: 127px;
+            height: 32px;
+          }
+          .year_mouth_day {
+            width: 93px;
+            height: 32px;
+          }
+          .time_line_year {
+            float: left;
+            overflow: auto;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_line_mouth {
+            float: left;
+
+            overflow: auto;
+            display: none;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_line_day {
+            float: left;
+
+            overflow: auto;
+            display: none;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_choise_button {
+            @include left;
+            margin-left: 200px;
+            border: none;
+            width: 127px;
+            height: 32px;
+            line-height: 26px;
+            background-color: #019b8d;
+            font-family: Microsoft YaHei;
+            font-size: 14px;
+            letter-spacing: 0.8px;
+            color: #ffffff;
+            &:active {
+              background-color: darken(#019b8d, 10%);
+            }
+          }
+
+        }
+        .group_resource_apply_list{
+          margin-top: 42px;
+          width: 968px;
+          height: 434px;
+          th{
+            background-color: #f0efef;
+          }
+          th, td {
+            width: 60px;
+            max-width: 75px;
+            @include dot;
+            text-align: center;
+            font-family: Microsoft YaHei;
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: #1c1c1c;
+            .rent_count{
+              letter-spacing: 1.2px;
+              text-align: center;
+              color: #999999;
+              font-size: 12px;
+            }
+            .first{
+              color: white;
+              margin: auto;
+              @include block;
+              @include sprite($rank-first);
+            }
+            .second{
+              color: white;
+              margin: auto;
+              @include block;
+              @include sprite($rank-second);
+            }
+            .third{
+              color: white;
+              margin: auto;
+              @include block;
+              @include sprite($rank-third);
+            }
+          }
+          .orange {
+            color: #ffa303;
+          }
+        }
+      }
+      .group_total_chart{
+        overflow-y: auto;
+        overflow-x: hidden;
+        border: solid 1px #e3e1e1;
+        border-top: none;
+        border-bottom: none!important;
+        .group_total_chart_title{
+          text-align: center;
+          font-family: Microsoft YaHei;
+          font-size: 16px;
+          letter-spacing: 1.6px;
+          color: #03273c;
+        }
+        .time_choise {
+          overflow: auto;
+          width: 100%;
+          margin-top: 27px;
+          margin-left: 181px;
+          & > span {
+            margin-top: 5px;
+            margin-left: 8px;
+            @include left;
+          }
+          .begging_time {
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+          .ending_time {
+            margin-left: 25px;
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+
+          select {
+            @include left;
+          }
+          .reader_classify {
+            width: 127px;
+            height: 32px;
+          }
+          .year_mouth_day {
+            width: 93px;
+            height: 32px;
+          }
+          .time_line_year {
+            float: left;
+            overflow: auto;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_line_mouth {
+            float: left;
+
+            overflow: auto;
+            display: none;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_line_day {
+            float: left;
+
+            overflow: auto;
+            display: none;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_choise_button {
+            @include left;
+            margin-left: 200px;
+            border: none;
+            width: 127px;
+            height: 32px;
+            line-height: 26px;
+            background-color: #019b8d;
+            font-family: Microsoft YaHei;
+            font-size: 14px;
+            letter-spacing: 0.8px;
+            color: #ffffff;
+            &:active {
+              background-color: darken(#019b8d, 10%);
+            }
+          }
+
+        }
+        #group_total_chart{
+          @include left;
+          margin-top: 10px;
+          margin-bottom: 77px;
+          width: 80%;
+          height: 370px;
+        }
+        .switch_button{
+          margin-top: 100px;
+          @include left;
+          width: 100px;
+          button{
+            font-family: Microsoft YaHei;
+            font-size: 12px;
+            letter-spacing: 1.2px;
+            color: #1c1c1c;
+            background-color: transparent;
+            border: none;
+            span{
+              @include left;
+              margin-right: 8px;
+              margin-top: 3px;
+            }
+            .show_it{
+              @include sprite($show-this);
+            }
+            .hide_it{
+              @include sprite($hide-this);
+            }
+          }
+        }
+      }
+      .ip_visit{
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 0px 28px 60px;
+        border: solid 1px #e3e1e1;
+        border-top: none;
+        border-bottom: none!important;
+        .digit_info_subtitle {
+          margin-bottom: 41px;
+          padding-top: 44px;
+          border: none;
+          border-top: dashed 1px #e3e1e1;
+          font-family: Microsoft YaHei;
+          font-size: 24px;
+          letter-spacing: 2.4px;
+          color: #1c1c1c;
+        }
+        .time_choise {
+          overflow: auto;
+          width: 100%;
+          margin-left: 14px;
+          & > span {
+            margin-top: 5px;
+            margin-left: 8px;
+            @include left;
+          }
+          .begging_time {
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+          .ending_time {
+            margin-left: 25px;
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+
+          select {
+            @include left;
+          }
+          .reader_classify {
+            width: 127px;
+            height: 32px;
+          }
+          .year_mouth_day {
+            width: 93px;
+            height: 32px;
+          }
+          .time_line_year {
+            float: left;
+            overflow: auto;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_line_mouth {
+            float: left;
+
+            overflow: auto;
+            display: none;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_line_day {
+            float: left;
+
+            overflow: auto;
+            display: none;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_choise_button {
+            @include left;
+            margin-left: 200px;
+            border: none;
+            width: 127px;
+            height: 32px;
+            line-height: 26px;
+            background-color: #019b8d;
+            font-family: Microsoft YaHei;
+            font-size: 14px;
+            letter-spacing: 0.8px;
+            color: #ffffff;
+            &:active {
+              background-color: darken(#019b8d, 10%);
+            }
+          }
+
+        }
+        .ip_visit_list{
+          margin-top: 42px;
+          width: 968px;
+          height: 88.1px;
+          th{
+            background-color: #f0efef;
+          }
+          th,td{
+            width: 120px;
+            max-width: 140px;
+            @include dot;
+            text-align: center;
+            font-family: Microsoft YaHei;
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: #1c1c1c;
+          }
+          .orange {
+            color: #ffa303;
+          }
+
+        }
+      }
+      .digit_rank{
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 0px 28px 60px;
+        border: solid 1px #e3e1e1;
+        border-top: none;
+        border-bottom: none!important;
+        .digit_info_subtitle {
+          margin-bottom: 41px;
+          padding-top: 7px;
+          border: none;
+          font-family: Microsoft YaHei;
+          font-size: 24px;
+          letter-spacing: 2.4px;
+          color: #1c1c1c;
+        }
+        .time_choise {
+          overflow: auto;
+          width: 100%;
+          margin-left: 14px;
+          & > span {
+            margin-top: 5px;
+            margin-left: 8px;
+            @include left;
+          }
+          .begging_time {
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+          .ending_time {
+            margin-left: 25px;
+            @include left;
+            input {
+              text-align: center;
+              height: 32px;
+              width: 90px;
+            }
+          }
+
+          select {
+            @include left;
+          }
+          .reader_classify {
+            width: 127px;
+            height: 32px;
+          }
+          .year_mouth_day {
+            width: 93px;
+            height: 32px;
+          }
+          .time_line_year {
+            float: left;
+            overflow: auto;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_line_mouth {
+            float: left;
+
+            overflow: auto;
+            display: none;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_line_day {
+            float: left;
+
+            overflow: auto;
+            display: none;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+          }
+          .time_choise_button {
+            @include left;
+            margin-left: 200px;
+            border: none;
+            width: 127px;
+            height: 32px;
+            line-height: 26px;
+            background-color: #019b8d;
+            font-family: Microsoft YaHei;
+            font-size: 14px;
+            letter-spacing: 0.8px;
+            color: #ffffff;
+            &:active {
+              background-color: darken(#019b8d, 10%);
+            }
+          }
+
+        }
+        .digit_rank_list {
+          margin-bottom: 17px;
+          margin-top: 40px;
+          width: 968px;
+          height: 397px;
+          th, td {
+            width: 180px;
+            max-width: 200px;
+            @include dot;
+            text-align: center;
+            font-family: Microsoft YaHei;
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: #1c1c1c;
+            .rent_count{
+              letter-spacing: 1.2px;
+              text-align: center;
+              color: #999999;
+              font-size: 12px;
+            }
+            .first{
+              color: white;
+              margin: auto;
+              @include block;
+              @include sprite($rank-first);
+            }
+            .second{
+              color: white;
+              margin: auto;
+              @include block;
+              @include sprite($rank-second);
+            }
+            .third{
+              color: white;
+              margin: auto;
+              @include block;
+              @include sprite($rank-third);
+            }
+          }
+        }
+      }
+    }
+  }
+  .resource_push{
+    margin-top: 82px;
+    margin-bottom: 98px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    clear: both;
+    width: auto;
+    min-width: 1030px;
+    height: auto;
+    .resource_push_title {
+      width: 1030px;
+      height: 40px;
+      background-color: #eeeeee;
+      .book_circulation_name {
+        @include left;
+        text-align: center;
+        width: 294px;
+        height: 40px;
+        background-color: #019b8d;
+        font-family: Microsoft YaHei;
+        font-size: 24px;
+        line-height: 40px;
+        letter-spacing: 2.4px;
+        color: #ffffff;
+      }
+      .up_down {
+        float: right;
+        border: none;
+        width: 82px;
+        height: 40px;
+        background-color: #c9c7c7;
+        font-family: Microsoft YaHei;
+        font-size: 18px;
+        line-height: 36px;
+        letter-spacing: 1.8px;
+        color: #fff;
+        .classify_up {
+          @include left;
+          @include sprite($title-up);
+          margin-left: 4px;
+          margin-top: 11px;
+        }
+        &:active {
+          background-color: darken(#c9c7c7, 10%);
+        }
+      }
+    }
+    .resource_push_content{
+      text-indent: 32px;
+      height: 134px;
+      background-color: #ffffff;
+      border: solid 1px #e3e1e1;
+      font-family: Microsoft YaHei;
+      font-size: 18px;
+      line-height: 134px;
+      letter-spacing: 2px;
+      color: #1c1c1c;
+      span{
+        color: #ffa303;
+      }
+    }
+  }
+  .lib_resource_proportion{
+    margin-top: 82px;
+    clear: both;
+    width: auto;
+    min-width: 1030px;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    .lib_resource_proportion_title {
+      width: 1030px;
+      height: 40px;
+      background-color: #eeeeee;
+      .lib_resource_proportion_name {
+        @include left;
+        text-align: center;
+        width: 220px;
+        height: 40px;
+        background-color: #019b8d;
+        font-family: Microsoft YaHei;
+        font-size: 24px;
+        line-height: 40px;
+        letter-spacing: 2.4px;
+        color: #ffffff;
+      }
+      .up_down {
+        float: right;
+        border: none;
+        width: 82px;
+        height: 40px;
+        background-color: #c9c7c7;
+        font-family: Microsoft YaHei;
+        font-size: 18px;
+        line-height: 36px;
+        letter-spacing: 1.8px;
+        color: #fff;
+        .classify_up {
+          @include left;
+          @include sprite($title-up);
+          margin-left: 4px;
+          margin-top: 11px;
+        }
+        &:active {
+          background-color: darken(#c9c7c7, 10%);
+        }
+      }
+    }
+    .lib_resource_proportion_content{
+      padding: 26px 28px;
+      margin-top: 17px;
+      width: 1024px;
+      height: 565px;
+      border: solid 1px #e3e1e1;
+      .classify_list{
+        width: 968px;
+        height: 95px;
+        margin-bottom: 40px;
+        td{
+          width: 240px;
+          max-width: 240px;
+          @include dot;
+          text-align: center;
+          font-family: Microsoft YaHei;
+          color: #1c1c1c;
+          font-size: 18px;
+          span{
+            letter-spacing: 2.2px;
+            line-height: 2.1;
+            text-align: center;
+            color: #019b8d;
+            font-size: 22px;
+          }
+        }
+      }
+      #lib_resource_proportion_chart{
+        border-top: dashed 3px #e3e1e1;;
+        width: 100%;
+        height: 370px;
+      }
+    }
+  }
+  .lib_book_count{
+    margin-top: 82px;
+    margin-bottom: 98px;
+    clear: both;
+    width: auto;
+    min-width: 1030px;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    .lib_book_count_title {
+      width: 1030px;
+      height: 40px;
+      background-color: #eeeeee;
+      .lib_book_count_name {
+        @include left;
+        text-align: center;
+        width: 220px;
+        height: 40px;
+        background-color: #019b8d;
+        font-family: Microsoft YaHei;
+        font-size: 24px;
+        line-height: 40px;
+        letter-spacing: 2.4px;
+        color: #ffffff;
+      }
+      .up_down {
+        float: right;
+        border: none;
+        width: 82px;
+        height: 40px;
+        background-color: #c9c7c7;
+        font-family: Microsoft YaHei;
+        font-size: 18px;
+        line-height: 36px;
+        letter-spacing: 1.8px;
+        color: #fff;
+        .classify_up {
+          @include left;
+          @include sprite($title-up);
+          margin-left: 4px;
+          margin-top: 11px;
+        }
+        &:active {
+          background-color: darken(#c9c7c7, 10%);
+        }
+      }
+    }
+    .lib_book_count_content{
+      padding: 0 ;
+      margin-top: 16px;
+      border: solid 1px #e3e1e1;
+      .book_classify{
+        overflow-x: hidden;
+        overflow-y: hidden;
+        &>div{
+          cursor: pointer;
+          box-sizing: border-box;
+          background-color: #eeeeee;
+          text-indent: 42px;
+          @include left;
+          padding-bottom: 9px;
+          line-height: 44px;
+          width: 515px;
+          height: 42px;
+          font-family: Arial;
+          font-size: 22px;
+          font-weight: bold;
+          letter-spacing: 2.2px;
+          p{
+            @include dot;
+            @include left;
+          }
+          span{
+            margin-top: 9px;
+            margin-left: 25px;
+            @include left;
+            @include sprite($book-count-unchosed);
+          }
+          .count_info{
+            text-indent: 15px;
+            max-width: 210px;
+          }
+        }
+        .chosed{
+          line-height: 42px;
+          height: 51px;
+          background-color: transparent;
+          @include sprite($book-count);
+          color: #ffffff;
+          span{
+            margin-top: 8px;
+            @include left;
+            @include sprite($book-count-chosed)
+          }
+        }
+
+      }
+      .classify_count{
+        margin-top: 28px;
+        padding: 0 28px;
+        .lib_book_count_subtitle{
+          margin-bottom: 22px;
+          font-family: Microsoft YaHei;
+          font-size: 24px;
+          letter-spacing: 2.4px;
+          color: #1c1c1c;
+        }
+        .classify_count_list{
+          width: 968px;
+          height: 310px;
+          th,td{
+            @include dot;
+            width: 340px;
+            max-width: 360px;
+            font-family: Microsoft YaHei;
+            font-size: 16px;
+            letter-spacing: 1.8px;
+            color: #1c1c1c;
+            text-align: center;
+          }
+          .orange {
+            color: #ffa303;
+          }
+          .gray{
+            background-color: #f3f3f3;
+          }
+        }
+        #classify_count_chart{
+          width: 100%;
+          height: 316px;
+          margin-top: 40px;
+          border-top: dashed 3px #e3e1e1;
+          border-bottom:  dashed 3px #e3e1e1;
+
+        }
+      }
+      .lib_book_num{
+        margin-top: 30px;
+        padding: 0 28px;
+        .lib_book_count_subtitle{
+          font-family: Microsoft YaHei;
+          font-size: 24px;
+          letter-spacing: 2.4px;
+          color: #1c1c1c;
+        }
+        .lib_book_num_list{
+          width: 968px;
+          height: 422px;
+          th,td{
+            @include dot;
+            width: 340px;
+            max-width: 360px;
+            font-family: Microsoft YaHei;
+            font-size: 16px;
+            letter-spacing: 1.8px;
+            color: #1c1c1c;
+            text-align: center;
+          }
+          .orange {
+            color: #ffa303;
+          }
+          .gray{
+            background-color: #f3f3f3;
+          }
+        }
+        #lib_book_num_chart{
+          width: 100%;
+          height: 316px;
+          margin-top: 40px;
+          border-top: dashed 3px #e3e1e1;
+          border-bottom:  dashed 3px #e3e1e1;
+
+        }
+      }
+      .book_increment{
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin-top: 49px;
+        padding: 0 28px;
+        .lib_book_count_subtitle{
+          font-family: Microsoft YaHei;
+          font-size: 24px;
+          letter-spacing: 2.4px;
+          color: #1c1c1c;
+        }
+        .book_increment_time_line{
+          padding-left: 140px;
+          p{
+            margin: 0;
+            line-height: 32px;
+            @include left;
+            font-family: Microsoft YaHei;
+            font-size: 16px;
+            letter-spacing: 1.6px;
+            color: #1c1c1c;
+          }
+          .time_choise {
+            @include left;
+            overflow: auto;
+            width: 300px;
+            margin-left: 40px;
+            & > span {
+              margin-top: 5px;
+              margin-left: 8px;
+              @include left;
+            }
+            .begging_time {
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+            .ending_time {
+              margin-left: 25px;
+              @include left;
+              input {
+                text-align: center;
+                height: 32px;
+                width: 90px;
+              }
+            }
+
+            select {
+              @include left;
+            }
+            .reader_classify {
+              width: 127px;
+              height: 32px;
+            }
+            .year_mouth_day {
+              width: 93px;
+              height: 32px;
+            }
+            .time_line_year {
+              float: left;
+              overflow: auto;
+              & > span {
+                margin-top: 5px;
+                margin-left: 8px;
+                @include left;
+              }
+              .begging_time {
+                margin-left: 25px;
+                @include left;
+                input {
+                  text-align: center;
+                  height: 32px;
+                  width: 90px;
+                }
+              }
+              .ending_time {
+                margin-left: 25px;
+                @include left;
+                input {
+                  text-align: center;
+                  height: 32px;
+                  width: 90px;
+                }
+              }
+            }
+            .time_line_mouth {
+              float: left;
+
+              overflow: auto;
+              display: none;
+              & > span {
+                margin-top: 5px;
+                margin-left: 8px;
+                @include left;
+              }
+              .begging_time {
+                margin-left: 25px;
+                @include left;
+                input {
+                  text-align: center;
+                  height: 32px;
+                  width: 90px;
+                }
+              }
+              .ending_time {
+                margin-left: 25px;
+                @include left;
+                input {
+                  text-align: center;
+                  height: 32px;
+                  width: 90px;
+                }
+              }
+            }
+            .time_line_day {
+              float: left;
+
+              overflow: auto;
+              display: none;
+              & > span {
+                margin-top: 5px;
+                margin-left: 8px;
+                @include left;
+              }
+              .begging_time {
+                margin-left: 25px;
+                @include left;
+                input {
+                  text-align: center;
+                  height: 32px;
+                  width: 90px;
+                }
+              }
+              .ending_time {
+                margin-left: 25px;
+                @include left;
+                input {
+                  text-align: center;
+                  height: 32px;
+                  width: 90px;
+                }
+              }
+            }
+            .time_choise_button {
+              @include left;
+              margin-left: 200px;
+              border: none;
+              width: 127px;
+              height: 32px;
+              line-height: 26px;
+              background-color: #019b8d;
+              font-family: Microsoft YaHei;
+              font-size: 14px;
+              letter-spacing: 0.8px;
+              color: #ffffff;
+              &:active {
+                background-color: darken(#019b8d, 10%);
+              }
+            }
+
+          }
+          button{
+            margin-left: 20px;
+            border:none;
+            width: 127px;
+            height: 32px;
+            background-color: #019b8d;
+            font-family: Microsoft YaHei;
+            font-size: 14px;
+            letter-spacing: 0.8px;
+            color: #ffffff;
+            &:active{
+              background-color: darken(#019b8d,10%);
+            }
+          }
+        }
+        #lib_all_chart{
+          margin-top: 25px;
+          height: 340px;
+          width: 100%;
+          margin-bottom: 90px;
+        }
+        #chinese_increment_chart{
+          margin-top: 25px;
+          height: 340px;
+          width: 100%;
+          margin-bottom: 90px;
+        }
+        #lib_room_increment_chart{
+          margin-top: 25px;
+          height: 340px;
+          width: 100%;
+          margin-bottom: 64px;
+        }
+      }
+    }
+  }
+}

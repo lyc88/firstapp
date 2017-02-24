@@ -1,0 +1,1407 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>用户信息数据—利用部分</title>
+    <link type="text/css" rel="stylesheet" href="css/all.min.css"/>
+</head>
+<body>
+<div class="header">
+    <div class="center-box">
+        <span class="logo"></span>
+        <span class="name_image"></span>
+        <div class="useranddata">
+            <div class="log">
+                <button class="login">
+                    登录
+                </button>
+                <button>
+                    注册
+                </button>
+            </div>
+            <div class="data">
+                <span></span>
+                <p>星期四&nbsp&nbsp2016-11-28</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="tool_bar">
+    <div class="center-box">
+        <div class="bigdata">
+            <p>信息资源及利用大数据</p>
+            <span></span>
+        </div>
+        <div class="reader_module_button">
+            <a class="reader_reproter">
+                <span></span>
+                读者分析报告
+            </a>
+            <a class="resource_reporter">
+                <span></span>
+                资源分析报告
+            </a>
+            <a class="use_reporter">
+                <span></span>
+                利用分析报告
+            </a>
+        </div>
+    </div>
+</div>
+<div class="info_proportion">
+    <div class="center-box">
+        <div class="info_proportion_title">
+            <div class="info_proportion_name">
+                信息资源利用综合比例
+            </div>
+            <button class="up_down">
+                <span class="classify_up"></span>
+                收起
+            </button>
+        </div>
+        <div class="info_proportion_content">
+            <div class="time_choise">
+                <div class="input-append date begging_time">
+                    <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                    <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                </div>
+                <span>   -   </span>
+                <div class="input-append date ending_time">
+                    <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                    <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                </div>
+            </div>
+            <button class="time_choise_button">筛选</button>
+            <div id="access_num_chart"></div>
+            <div id="info_percentage_chart"></div>
+        </div>
+    </div>
+</div>
+<div class="book_circulation">
+    <div class="center-box">
+        <div class="book_circulation_title">
+            <div class="book_circulation_name">
+                图书流通
+            </div>
+            &nbsp&nbsp&nbsp当前外借图书1234567册
+            <button class="up_down">
+                <span class="classify_up"></span>
+                收起
+            </button>
+        </div>
+        <div class="book_circulation_content">
+            <div class="return_book">
+                <p class="book_circulation_subtitle">借还图书统计</p>
+                <div class="time_choise">
+                    <select class="year_mouth_day form-control">
+                        <option value="year">按年</option>
+                        <option value="mouth">按月</option>
+                        <option value="day">按日</option>
+                    </select>
+                    <!--这是个套路,通过hide show的切换来实现'年/月/日select'的功能-->
+                    <div class="time_line_year">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <div class="time_line_mouth">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <div class="time_line_day">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <button class="time_choise_button">统计</button>
+                </div>
+                <table class="table-bordered return_book_list_year year_list">
+                    <tr>
+                        <th></th>
+                        <th>2007年</th>
+                        <th>2008年</th>
+                        <th>2009年</th>
+                        <th>2010年</th>
+                        <th>2011年</th>
+                        <th>2012年</th>
+                        <th>总计</th>
+                    </tr>
+                    <tr>
+                        <td>借书</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">123123123123123141</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td>还书</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">123123123123123141</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                </table>
+                <table class="table-bordered return_book_list_month month_list">
+                    <tr>
+                        <th></th>
+                        <th colspan="3">2007年</th>
+                        <th colspan="3">2008年</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>10月</th>
+                        <th>11月</th>
+                        <th>12月</th>
+                        <th>1月</th>
+                        <th>2月</th>
+                        <th>3月</th>
+                        <th>总计</th>
+                    </tr>
+                    <tr>
+                        <td>借书</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">123123123123123141</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td>还书</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">123123123123123141</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                </table>
+                <table class="table-bordered return_book_list_day day_list">
+                    <tr>
+                        <th></th>
+                        <th colspan="5">2007年8月</th>
+                        <th colspan="5">2008年8月</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>5日</th>
+                        <th>6日</th>
+                        <th>7日</th>
+                        <th>8日</th>
+                        <th>9日</th>
+                        <th>10日</th>
+                        <th>11日</th>
+                        <th>12日</th>
+                        <th>13日</th>
+                        <th>14日</th>
+                        <th>总计</th>
+                    </tr>
+                    <tr>
+                        <td>借书</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">123123123123123141</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td>还书</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">123123123123123141</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                </table>
+                <div id="return_book_charts"></div>
+            </div>
+            <div class="group_return_book">
+                <p class="book_circulation_subtitle">单位借还图书统计</p>
+                <div class="time_choise">
+                    <select class="year_mouth_day form-control">
+                        <option value="year">按年</option>
+                        <option value="mouth">按月</option>
+                        <option value="day">按日</option>
+                    </select>
+                    <!--这是个套路,通过hide show的切换来实现'年/月/日select'的功能-->
+                    <div class="time_line_year">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <div class="time_line_mouth">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <div class="time_line_day">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <button class="time_choise_button">统计</button>
+
+                </div>
+                <table class="table-bordered group_return_book_list_year year_list">
+                    <tr>
+                        <th>单位</th>
+                        <th>在编人数</th>
+                        <th>数量</th>
+                        <th  colspan="3">2007年</th>
+                        <th  colspan="3">2008年</th>
+                        <th>总计</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">单位一</td>
+                        <td  class="orange" rowspan="2">12312</td>
+                        <td>总量</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td>人均</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">单位一</td>
+                        <td  class="orange" rowspan="2">12312</td>
+                        <td>总量</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td>人均</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">单位一一一一一一</td>
+                        <td  class="orange" rowspan="2">12312</td>
+                        <td>总量</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td>人均</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">123123123131341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">院外读者</td>
+                        <td  class="orange" rowspan="2">12312</td>
+                        <td>总量</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td>人均</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                </table>
+                <table class="table-bordered group_return_book_list_month month_list">
+                    <tr>
+                        <th colspan="3"></th>
+                        <th colspan="3">2007年</th>
+                        <th colspan="3">2008年</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>单位</th>
+                        <th>在编人数</th>
+                        <th>数量</th>
+                        <th>10月</th>
+                        <th>11月</th>
+                        <th>12月</th>
+                        <th>1月</th>
+                        <th>2月</th>
+                        <th>3月</th>
+                        <th>总计</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">单位一</td>
+                        <td  class="orange" rowspan="2">12312</td>
+                        <td>总量</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td>人均</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">单位一</td>
+                        <td  class="orange" rowspan="2">12312</td>
+                        <td>总量</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td>人均</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">单位一一一一一一</td>
+                        <td  class="orange" rowspan="2">12312</td>
+                        <td>总量</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td>人均</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">123123123131341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">院外读者</td>
+                        <td  class="orange" rowspan="2">12312</td>
+                        <td>总量</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td>人均</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                </table>
+                <table class="table-bordered group_return_book_list_day day_list">
+                    <tr>
+                        <th colspan="3"></th>
+                        <th colspan="3">2007年1月</th>
+                        <th colspan="3">2007年2月</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <th>单位</th>
+                        <th>在编人数</th>
+                        <th>数量</th>
+                        <th>29日</th>
+                        <th>30日</th>
+                        <th>31日</th>
+                        <th>1日</th>
+                        <th>2日</th>
+                        <th>3日</th>
+                        <th>总计</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">单位一</td>
+                        <td  class="orange" rowspan="2">12312</td>
+                        <td>总量</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td>人均</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">单位一</td>
+                        <td  class="orange" rowspan="2">12312</td>
+                        <td>总量</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td>人均</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">单位一一一一一一</td>
+                        <td  class="orange" rowspan="2">12312</td>
+                        <td>总量</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td>人均</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">123123123131341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">院外读者</td>
+                        <td  class="orange" rowspan="2">12312</td>
+                        <td>总量</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                    <tr>
+                        <td>人均</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                        <td class="orange">12341</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="hot_book">
+                <p class="book_circulation_subtitle">热门图书排行</p>
+                <div class="time_choise">
+                    <select class="year_mouth_day form-control">
+                        <option value="year">按年</option>
+                        <option value="mouth">按月</option>
+                        <option value="day">按日</option>
+                    </select>
+                    <!--这是个套路,通过hide show的切换来实现'年/月/日select'的功能-->
+                    <div class="time_line_year">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <div class="time_line_mouth">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <div class="time_line_day">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <button class="time_choise_button">统计</button>
+                </div>
+                <table class="table-bordered hot_book_list">
+                    <tr>
+                        <th>排行</th>
+                        <th>总量排行</th>
+                        <th>排行</th>
+                        <th>军事图书</th>
+                        <th>军事图书</th>
+                        <th>军事图书</th>
+                        <th>军事图书</th>
+                    </tr>
+                    <tr>
+                        <td><span class="first">1</span></td>
+                        <td>图书名称213131233123名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td><span class="first">1</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(124121231231312343次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="second">2</span></td>
+                        <td>图书名称213131233123名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td><span class="second">2</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(124121231231312343次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="third">3</span></td>
+                        <td>图书名称213131233123名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td><span class="third">3</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(124121231231312343次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="orange">4</span></td>
+                        <td>图书名称213131233123名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td><span class="orange">4</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(124121231231312343次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="orange">5</span></td>
+                        <td>图书名称213131233123名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td><span class="orange">5</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(124121231231312343次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="digit_info">
+    <div class="center-box">
+        <div class="digit_info_title">
+            <div class="digit_info_name">
+                数字资源利用
+            </div>
+            <button class="up_down">
+                <span class="classify_up"></span>
+                收起
+            </button>
+        </div>
+        <div class="digit_info_content">
+            <div class="resource_apply">
+                <p class="digit_info_subtitle">资源库应用</p>
+                <div class="time_choise">
+                    <select class="year_mouth_day form-control">
+                        <option value="year">按年</option>
+                        <option value="mouth">按月</option>
+                        <option value="day">按日</option>
+                    </select>
+                    <!--这是个套路,通过hide show的切换来实现'年/月/日select'的功能-->
+                    <div class="time_line_year">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <div class="time_line_mouth">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <div class="time_line_day">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <button class="time_choise_button">统计</button>
+                </div>
+                <table class="table-bordered resource_apply_list">
+                    <tr>
+                        <th colspan="2"></th>
+                        <th colspan="4">2007年</th>
+                        <th colspan="4">2008年</th>
+                        <th colspan="4">总计</th>
+                    </tr>
+                    <tr>
+                        <th>资源库</th>
+                        <th>数量</th>
+                        <th>浏览</th>
+                        <th>收藏</th>
+                        <th>下载</th>
+                        <th>总量</th>
+                        <th>浏览</th>
+                        <th>收藏</th>
+                        <th>下载</th>
+                        <th>总量</th>
+                        <th>浏览</th>
+                        <th>收藏</th>
+                        <th>下载</th>
+                        <th>总量</th>
+                    </tr>
+                    <tr>
+                    <td rowspan="2">资源库一</td>
+                    <td>次数</td>
+                    <td class="orange">1232</td>
+                    <td class="orange">1232</td>
+                    <td class="orange">1232</td>
+                    <td class="orange">1232</td>
+                    <td class="orange">1232</td>
+                    <td class="orange">1232</td>
+                    <td class="orange">1232</td>
+                    <td class="orange">1232</td>
+                    <td class="orange">1232</td>
+                    <td class="orange">1232</td>
+                    <td class="orange">1232</td>
+                    <td class="orange">1232</td>
+                </tr>
+                    <tr>
+                        <td>比例</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">资源库一</td>
+                        <td>次数</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232323232323232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                    </tr>
+                    <tr>
+                        <td>比例</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">资源库一</td>
+                        <td>次数</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                    </tr>
+                    <tr>
+                        <td>比例</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">资源库一</td>
+                        <td>次数</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                    </tr>
+                    <tr>
+                        <td>比例</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">合计</td>
+                        <td class="orange">21321</td>
+                        <td class="orange">21321</td>
+                        <td class="orange">21321</td>
+                        <td class="orange">21321</td>
+                        <td class="orange">21321</td>
+                        <td class="orange">21321</td>
+                        <td class="orange">21321</td>
+                        <td class="orange">21321</td>
+                        <td class="orange">21321</td>
+                        <td class="orange">21321</td>
+                        <td class="orange">21321</td>
+                        <td class="orange">21321</td>
+                    </tr>
+                </table>
+                <select class="form-control chose_storge">
+                    <option>总库</option>
+                    <option>资源库一</option>
+                    <option>资源库二</option>
+                    <option>资源库三</option>
+                </select>
+                <div id="resource_apply_chart"></div>
+            </div>
+            <div class="group_resource_apply">
+                <p class="digit_info_subtitle">资源库应用</p>
+                <div class="time_choise">
+                    <select class="year_mouth_day form-control">
+                        <option value="year">按年</option>
+                        <option value="mouth">按月</option>
+                        <option value="day">按日</option>
+                    </select>
+                    <!--这是个套路,通过hide show的切换来实现'年/月/日select'的功能-->
+                    <div class="time_line_year">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <div class="time_line_mouth">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <div class="time_line_day">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <button class="time_choise_button">统计</button>
+                </div>
+                <table class="table-bordered group_resource_apply_list">
+                    <tr>
+                        <th colspan="2"></th>
+                        <th colspan="4">2007年</th>
+                        <th colspan="4">2008年</th>
+                        <th colspan="4">总计</th>
+                    </tr>
+                    <tr>
+                        <th>资源库</th>
+                        <th>数量</th>
+                        <th>浏览</th>
+                        <th>收藏</th>
+                        <th>下载</th>
+                        <th>总量</th>
+                        <th>浏览</th>
+                        <th>收藏</th>
+                        <th>下载</th>
+                        <th>总量</th>
+                        <th>浏览</th>
+                        <th>收藏</th>
+                        <th>下载</th>
+                        <th>总量</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">资源库一</td>
+                        <td>次数</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                    </tr>
+                    <tr>
+                        <td>比例</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">资源库一</td>
+                        <td>次数</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232323232323232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                    </tr>
+                    <tr>
+                        <td>比例</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">资源库一</td>
+                        <td>次数</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                    </tr>
+                    <tr>
+                        <td>比例</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">资源库一</td>
+                        <td>次数</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                    </tr>
+                    <tr>
+                        <td>比例</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1232</td>
+                        <td class="orange">1</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">合计</td>
+                        <td class="orange">21321</td>
+                        <td class="orange">21321</td>
+                        <td class="orange">21321</td>
+                        <td class="orange">21321</td>
+                        <td class="orange">21321</td>
+                        <td class="orange">21321</td>
+                        <td class="orange">21321</td>
+                        <td class="orange">21321</td>
+                        <td class="orange">21321</td>
+                        <td class="orange">21321</td>
+                        <td class="orange">21321</td>
+                        <td class="orange">21321</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="group_total_chart">
+                <p class="group_total_chart_title">单位总计数据统计图</p>
+                <div class="time_choise">
+                    <select class="year_mouth_day form-control">
+                        <option value="year">按年</option>
+                        <option value="mouth">按月</option>
+                        <option value="day">按日</option>
+                    </select>
+                    <!--这是个套路,通过hide show的切换来实现'年/月/日select'的功能-->
+                    <div class="time_line_year">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <div class="time_line_mouth">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <div class="time_line_day">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <button class="time_choise_button">统计</button>
+                </div>
+                <div id="group_total_chart"></div>
+                <div class="switch_button">
+                    <button><span class="show_it"></span>浏览量</button>
+                    <button><span class="hide_it"></span>下载量</button>
+                    <button><span class="hide_it"></span>收藏量</button>
+                    <button><span class="hide_it"></span>总量</button>
+                </div>
+            </div>
+            <div class="ip_visit">
+                <p class="digit_info_subtitle">IP访问量</p>
+                <div class="time_choise">
+                    <select class="year_mouth_day form-control">
+                        <option value="year">按年</option>
+                        <option value="mouth">按月</option>
+                        <option value="day">按日</option>
+                    </select>
+                    <!--这是个套路,通过hide show的切换来实现'年/月/日select'的功能-->
+                    <div class="time_line_year">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <div class="time_line_mouth">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <div class="time_line_day">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <button class="time_choise_button">统计</button>
+                </div>
+                <table class="table-bordered ip_visit_list">
+                    <tr>
+                        <th>IP地址</th>
+                        <th>访问量</th>
+                        <th>下载量</th>
+                        <th>收藏量</th>
+                        <th>IP地址</th>
+                        <th>访问量</th>
+                        <th>下载量</th>
+                        <th>收藏量</th>
+                    </tr>
+                    <tr>
+                        <td>院内用户</td>
+                        <td class="orange">12313132</td>
+                        <td class="orange">12123123131323313132</td>
+                        <td class="orange">12313132</td>
+                        <td>院外用户</td>
+                        <td class="orange">12313132</td>
+                        <td class="orange">12313132</td>
+                        <td class="orange">12313132</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="digit_rank">
+                <p class="digit_info_subtitle">数字热门资源排行</p>
+                <div class="time_choise">
+                    <select class="year_mouth_day form-control">
+                        <option value="year">按年</option>
+                        <option value="mouth">按月</option>
+                        <option value="day">按日</option>
+                    </select>
+                    <!--这是个套路,通过hide show的切换来实现'年/月/日select'的功能-->
+                    <div class="time_line_year">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <div class="time_line_mouth">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <div class="time_line_day">
+                        <div class="input-append date begging_time">
+                            <input placeholder="起始日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                        <span>   -   </span>
+                        <div class="input-append date ending_time">
+                            <input placeholder="截止日期" size="16" type="text" value="" readonly>
+                            <span class="add-on" style="visibility: hidden"><i class="glyphicon icon-th"></i></span>
+                        </div>
+                    </div>
+                    <button class="time_choise_button">统计</button>
+                </div>
+                <table class="table-bordered digit_rank_list">
+                    <tr>
+                        <th>排行</th>
+                        <th>按检索频度</th>
+                        <th>按浏览量</th>
+                        <th>按收藏量</th>
+                        <th>按下载量</th>
+                    </tr>
+                    <tr>
+                        <td><span class="first">1</span></td>
+                        <td>图书名称213131233123名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(124121231231312343次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="second">2</span></td>
+                        <td>图书名称213131233123名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(124121231231312343次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="third">3</span></td>
+                        <td>图书名称213131233123名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(124124喂喂喂喂喂喂喂3次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="orange">4</span></td>
+                        <td>图书名称213131233123名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="orange">5</span></td>
+                        <td>图书名称213131233123名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                        <td>图书名称名称<br/><span class="rent_count">(1241243次借阅)</span></td>
+                    </tr>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="resource_push">
+    <div class="center-box">
+        <div class="resource_push_title">
+            <div class="book_circulation_name">
+                资源定制与推送
+            </div>
+            <button class="up_down">
+                <span class="classify_up"></span>
+                收起
+            </button>
+        </div>
+        <div class="resource_push_content">
+            <span>1998年5月1日</span> 到 <span>2016年5月1日</span> 共为 <span>123650位</span> 读者定制的 <span>213</span> 个专题推送了 <span>12336598</span> 条信息
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="center-box">
+        <p class="contact_info">
+            南昌陆军学院图书馆 版权所有 咨询电话：0621-71174（军队）、0791-6871174（地线） 电子邮件：tsg@ncl.mtn 管理入口<br/>
+            技术支持：武汉麦达metadata.net.cn
+        </p>
+        <p class="user_info">
+            当前在线： 123人<br/>
+            今日访问： 23人<br/>
+            历史访问： 12321人
+        </p>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="js/user_info_usful.js"></script>
+<script type="text/javascript" src="js/user_info_usful_charts_publish.js"></script>
+</html>

@@ -49,5 +49,6 @@
 </head>
 <body>
     <h1>hello word!<a href="${pageContext.request.contextPath }/search/toSearch">go search</a></h1>
+    <h1>hello echart3<a href="${pageContext.request.contextPath }/search/toEchartDemo01">go search</a></h1>
 </body>
 </html>

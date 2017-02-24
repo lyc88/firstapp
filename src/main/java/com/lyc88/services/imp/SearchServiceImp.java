@@ -11,6 +11,7 @@ import com.lyc88.utils.SolrServer;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.impl.HttpSolrClient;
+import org.apache.solr.client.solrj.response.FacetField;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocumentList;
 import org.apache.solr.common.StringUtils;
@@ -116,8 +117,17 @@ public class SearchServiceImp implements SearchService {
             solrQuery.setFilterQueries(queryBean.getFq());
         }
         //分面
-        if(org.apache.commons.lang3.StringUtils.isNotBlank(queryBean.getFq())) {
-            solrQuery.addFacetField(queryBean.getFact());
+        if(org.apache.commons.lang3.StringUtils.isNotBlank(queryBean.getFact())) {
+            //solrQuery.addFacetField(queryBean.getFact());
+            solrQuery.setFacetLimit(20);//默认100
+            String[] fact = queryBean.getFact().split(",");
+            if(fact.length==1){//单一排序
+                solrQuery.addFacetField(fact[0]);
+            }else{//多条件排序
+                for(String fact1:fact){
+                    solrQuery.addFacetField(fact1);
+                }
+            }
         }
 
         //排序
@@ -142,11 +152,15 @@ public class SearchServiceImp implements SearchService {
                 }
             }
         }
+        solrQuery.setHighlightSimplePre("<font color='red'>");
+        solrQuery.addHighlightField("fileName");
+        solrQuery.setHighlightSimplePost("</font>");
         //分页
         Page page = queryBean.getPage();
         solrQuery.setStart((page.getCurrentPage()-1)*page.getPageSize());
         solrQuery.setRows(page.getPageSize());
         List<DiskFilesSolrBean> queryResponseBeans = null;
+        List<FacetField> listFact = null;
         float time = 0l;
         long numFound = 0;
         try {
@@ -154,8 +168,28 @@ public class SearchServiceImp implements SearchService {
             QueryResponse queryResponse = httpSolrClient.query(solrQuery);
             time = queryResponse.getQTime();
             numFound = queryResponse.getResults().getNumFound();
+            listFact = queryResponse.getFacetFields();
+
+           /* for(FacetField facetField:listFact){
+                System.out.println(facetField.getName()+"--"+facetField.getValues());
+                for(FacetField.Count count:facetField.getValues()){
+                    //System.out.println(count.getName()+"**"+count.getCount());
+                }
+            }*/
+            Map<String, Map<String, List<String>>> map1 = queryResponse.getHighlighting();
             page.setTotal(numFound);
             queryResponseBeans = queryResponse.getBeans(DiskFilesSolrBean.class);
+
+            //填充fileName 为高亮值
+            for (DiskFilesSolrBean diskFilesSolrBean:queryResponseBeans){
+                Map map2 = map1.get(diskFilesSolrBean.getId());
+                if(map2!=null && map2.size()>0){
+                    if(map2.containsKey("fileName")){
+                        List list = (List) map2.get("fileName");
+                        diskFilesSolrBean.setFileName(list.get(0).toString());
+                    }
+                }
+            }
         } catch (SolrServerException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -165,6 +199,7 @@ public class SearchServiceImp implements SearchService {
         map.put("page",page);
         map.put("time",time/1000);
         map.put("numFound",numFound);
+        map.put("listFact",listFact);
         return map;
     }
 

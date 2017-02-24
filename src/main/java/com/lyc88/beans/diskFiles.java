@@ -6,7 +6,7 @@ import javax.persistence.*;
  * Created by Administrator on 2017/1/26.
  */
 @Entity
-@Table(name = "diskFiles")
+@Table(name = "diskFilesCopy")
 public class DiskFiles {
     @GeneratedValue
     @Id
