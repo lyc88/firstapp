@@ -64,12 +64,14 @@ public class DiskFilesServiceMongoDbImp implements DiskFilesService {
                     if (file1.isDirectory()) {
                         listFiles(file1);
                     } else if (file1.isFile()) {
-                        save(DiskDetail.FileToDiskFile(file1));
+                        System.out.println(DiskDetail.FileToDiskFile(file1));
+                        //save(DiskDetail.FileToDiskFile(file1));
                     }
                 }
             }
         }else if (file.isFile()) {
-            save(DiskDetail.FileToDiskFile(file));
+            System.out.println(DiskDetail.FileToDiskFile(file));
+            //save(DiskDetail.FileToDiskFile(file));
         }
     }
 
@@ -82,7 +84,7 @@ public class DiskFilesServiceMongoDbImp implements DiskFilesService {
         if(log.isDebugEnabled()){
             log.debug("开始扫描");
         }
-        diskFilesService.scanDisk();
+        //diskFilesService.scanDisk();
         long end = System.currentTimeMillis();
         if(log.isDebugEnabled()){
             log.debug("用时:"+(end-start)/1000+"秒");

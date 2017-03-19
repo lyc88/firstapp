@@ -105,6 +105,11 @@
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:1.13.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.mongodb:mongo-java-driver:3.4.0" />
           <element id="library" level="project" name="Maven: org.jsoup:jsoup:1.8.1" />
+          <element id="library" level="project" name="Maven: com.rabbitmq:amqp-client:3.4.1" />
+          <element id="library" level="project" name="Maven: org.springframework.amqp:spring-rabbit:1.4.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.amqp:spring-amqp:1.4.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-messaging:4.1.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.retry:spring-retry:1.1.2.RELEASE" />
         </element>
       </element>
       <element id="directory" name="META-INF">

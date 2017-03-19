@@ -60,4 +60,15 @@ public class DiskFiles {
     public void setFileType(String fileType) {
         this.fileType = fileType;
     }
+
+    @Override
+    public String toString() {
+        return "DiskFiles{" +
+                "fileId=" + fileId +
+                ", fileSize='" + fileSize + '\'' +
+                ", filePath='" + filePath + '\'' +
+                ", fileName='" + fileName + '\'' +
+                ", fileType='" + fileType + '\'' +
+                '}';
+    }
 }

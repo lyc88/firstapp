@@ -1,4 +1,6 @@
+
 <html>
+
 <%--<header>hello xiao chuan</header>--%>
 <frameset rows="12%,88%">
     <frame src="views/header.jsp">

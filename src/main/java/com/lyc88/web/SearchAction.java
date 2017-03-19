@@ -104,7 +104,7 @@ public class SearchAction {
 
     @RequestMapping("toExportDocx")
     public void toExportDocx(HttpServletRequest request, Model model, HttpServletResponse response, @RequestParam MultipartFile image) throws InvalidFormatException, IOException {
-        WordprocessingMLPackage wordMLPackage = WordprocessingMLPackage.createPackage();
+       /* WordprocessingMLPackage wordMLPackage = WordprocessingMLPackage.createPackage();
         wordMLPackage.getMainDocumentPart().addParagraphOfText("Hello Word!");
         wordMLPackage.getMainDocumentPart().addObject(image);
         File file =  new java.io.File("src/main/files/HelloWord1.docx");
@@ -132,7 +132,7 @@ public class SearchAction {
             wordMLPackage.save(response.getOutputStream());
         } catch (Docx4JException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
 
