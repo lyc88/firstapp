@@ -98,6 +98,12 @@ public class SearchAction {
 
     @RequestMapping("toEchartDemo01")
     public String toEchartDemo01(Model model){
+        try {
+            int j = 0;
+            int i = 1/j;
+        }catch (Exception e){
+
+        }
 
         return "echartDemo01";
     }

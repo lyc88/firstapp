@@ -25,4 +25,15 @@
     <mvc:default-servlet-handler></mvc:default-servlet-handler>
     <mvc:annotation-driven></mvc:annotation-driven>
 
+
+    <!--拦截器 -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+
+            <mvc:mapping path="/**" />
+            <bean class="com.lyc88.utils.interceptor.UserIterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+
 </beans>

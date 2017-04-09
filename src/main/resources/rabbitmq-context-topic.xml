@@ -1,0 +1,40 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+	xsi:schemaLocation="http://www.springframework.org/schema/rabbit
+	http://www.springframework.org/schema/rabbit/spring-rabbit-1.4.xsd
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+	<!-- 定义RabbitMQ的连接工厂 -->
+	<rabbit:connection-factory id="connectionFactory"
+		host="127.0.0.1" port="5672" username="taotao" password="taotao"
+		virtual-host="/taotao" />
+		
+  	<rabbit:template id="rabbitTemplate" connection-factory="connectionFactory" exchange="topicExchanage"/>
+  	
+  	<!-- 前台系统 -->
+  	<rabbit:queue name="taotaoWebQueue" auto-declare="true"/>
+  	<!-- 搜索系统 -->
+  	<rabbit:queue name="taotaoSearchQueue" auto-declare="true"/>
+  	
+  	<!-- 定义交换机 -->
+  	<rabbit:topic-exchange name="topicExchanage" auto-declare="true">
+  		<rabbit:bindings>
+  			<!-- 前台系统绑定 -->
+			<rabbit:binding pattern="item.update" queue="taotaoWebQueue"/>  
+			<!-- 搜索系统绑定 -->
+			<rabbit:binding pattern="item.#" queue="taotaoSearchQueue"/>	
+  		</rabbit:bindings>
+  	</rabbit:topic-exchange>
+  	
+  	<bean id="taotaoWeb" class="cn.itcast.rabbitmq.taotao.TaotaoWeb"/>
+  	<bean id="taotaoSearch" class="cn.itcast.rabbitmq.taotao.TaotaoSearch"/>
+  	
+  	<!-- 定义队列监听 -->
+  	<rabbit:listener-container connection-factory="connectionFactory">
+  		<rabbit:listener ref="taotaoWeb" method="listen" queues="taotaoWebQueue"/>
+  		<rabbit:listener ref="taotaoSearch" method="listen" queues="taotaoSearchQueue"/>
+  	</rabbit:listener-container>
+
+
+</beans>

@@ -26,10 +26,11 @@ import java.util.List;
 @Service("diskFilesServiceMongoDb")
 public class DiskFilesServiceMongoDbImp implements DiskFilesService {
     private static Log log = LogFactory.getLog(DiskFilesServiceMongoDbImp.class);
-    private static  MongoClient mongoClient = MongoDBUtils.getMongoClient();
+    //private static  MongoClient mongoClient = MongoDBUtils.getMongoClient();
 
 
     public void save(DiskFiles diskFiles) {
+        MongoClient mongoClient = MongoDBUtils.getMongoClient();
         MongoDatabase mongoDatabase = mongoClient.getDatabase("mydisk");
         MongoCollection mongoCollection = mongoDatabase.getCollection("mydisk");
         Document document = new Document();
@@ -90,7 +91,7 @@ public class DiskFilesServiceMongoDbImp implements DiskFilesService {
             log.debug("用时:"+(end-start)/1000+"秒");
         }
 
-        mongoClient.close();
+       // mongoClient.close();
 
     }
 
